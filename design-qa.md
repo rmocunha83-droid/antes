@@ -1,6 +1,6 @@
 # Design QA
 
-final result: blocked
+final result: partially passed
 
 ## Reference
 
@@ -19,7 +19,10 @@ final result: blocked
 - `Antes.xcodeproj/project.pbxproj` validates with `plutil`.
 - Asset catalog JSON files validate with Python JSON parsing.
 - Swift source parses successfully with `swiftc -parse`.
+- `xcodebuild -project Antes.xcodeproj -scheme Antes -configuration Debug -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' build` succeeds.
+- OpenAI-backed backend returns structured rituals on `POST /api/generate-ritual`.
+- Browser preview at `http://127.0.0.1:8791/Preview/index.html` updates the ritual UI from a real backend response.
 
-## Blocker
+## Runtime Blocker
 
-- Full build, simulator launch, screenshot comparison, and runtime UI inspection are blocked in this environment because `xcodebuild` is currently pointed at Command Line Tools, not a full Xcode installation, and no XcodeBuildMCP simulator tools are available in this session.
+- Simulator launch inspection is still blocked because newly installed iOS 26.5 simulator devices are spending several minutes in first-boot Data Migration. The app builds successfully for iOS Simulator, but `simctl install`/`launch` could not complete before the simulator finished internal migration.
