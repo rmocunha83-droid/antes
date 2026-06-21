@@ -1,9 +1,9 @@
 const apps = [
-  { name: "TikTok", icon: "♪", className: "tiktok", locked: true },
-  { name: "Instagram", icon: "◎", className: "instagram", locked: true },
-  { name: "YouTube", icon: "▶", className: "youtube", locked: true },
-  { name: "X", icon: "X", className: "x", locked: true },
-  { name: "Discord", icon: "☁", className: "discord", locked: true }
+  { name: "TikTok", iconUrl: "https://cdn.simpleicons.org/tiktok/white", className: "tiktok", locked: true },
+  { name: "Instagram", iconUrl: "https://cdn.simpleicons.org/instagram/white", className: "instagram", locked: true },
+  { name: "YouTube", iconUrl: "https://cdn.simpleicons.org/youtube/FF0000", className: "youtube", locked: true },
+  { name: "X", iconUrl: "https://cdn.simpleicons.org/x/white", className: "x", locked: true },
+  { name: "Discord", iconUrl: "https://cdn.simpleicons.org/discord/white", className: "discord", locked: true }
 ];
 
 const state = {
@@ -77,7 +77,9 @@ function renderApps() {
     button.type = "button";
     button.innerHTML = `
       <span class="app-icon-wrap">
-        <span class="app-icon ${app.className}">${app.icon}</span>
+        <span class="app-icon ${app.className}">
+          <img class="app-logo" src="${app.iconUrl}" alt="" aria-hidden="true" />
+        </span>
         ${app.locked ? '<span class="lock-dot" aria-hidden="true">🔒</span>' : ""}
       </span>
       <strong>${app.name}</strong>
