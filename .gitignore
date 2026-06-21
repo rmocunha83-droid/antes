@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+
+.DS_Store
+DerivedData/
+build/
+*.xcuserdata/
+*.xcuserstate
+xcuserdata/
+
+node_modules/
+npm-debug.log*

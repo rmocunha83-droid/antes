@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Antes Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="phone" aria-label="Prévia do aplicativo Antes">
+      <header class="hero">
+        <div>
+          <h1>Antes</h1>
+          <p>Foco primeiro. Apps depois.</p>
+        </div>
+        <div class="streak" aria-label="Sequência de 7 dias">
+          <span>●</span>
+          <strong>7</strong>
+        </div>
+        <button class="icon-button" aria-label="Perfil">◎</button>
+      </header>
+
+      <section class="section">
+        <div class="section-title-row">
+          <div>
+            <h2>Apps bloqueados hoje</h2>
+            <p>Eles só desbloqueiam após o hábito.</p>
+          </div>
+          <button class="link-button" id="editApps">Editar</button>
+        </div>
+
+        <div class="apps" id="apps"></div>
+      </section>
+
+      <section class="section composer">
+        <div class="composer-title">
+          <span class="spark">✦</span>
+          <h2>Crie seu hábito com IA</h2>
+        </div>
+        <p>Descreva o que você quer fazer antes de desbloquear seus apps. A IA cria o ritual ideal para você.</p>
+        <label class="habit-input">
+          <input id="habitInput" value="10 flexões antes do TikTok" />
+          <button id="clearHabit" aria-label="Limpar hábito">×</button>
+        </label>
+        <div class="suggestions">
+          <span>Sugestões</span>
+          <button data-habit="Oração curta e leitura breve antes do Instagram">▣ Oração/Escritura</button>
+          <button data-habit="Escrever 3 coisas pelas quais sou grato">♥ Gratidão</button>
+          <button data-habit="Beber água antes de abrir o X">◆ Água</button>
+          <button data-habit="Responder 3 perguntas de matemática antes do YouTube">◈ Quiz</button>
+        </div>
+      </section>
+
+      <section class="section preview">
+        <div class="preview-heading">
+          <h2>Prévia do ritual gerado pela IA</h2>
+          <span>Novo</span>
+        </div>
+        <p id="ritualMeta">Flexões • Força • ~2 min</p>
+
+        <div class="ritual-grid">
+          <img src="../Antes/Assets.xcassets/PushupHabit.imageset/pushup-habit.png" alt="Pessoa fazendo flexão" />
+          <div class="steps">
+            <button class="step active" id="pushupStep">
+              <span class="step-icon">⌁</span>
+              <span><strong>1. Execução</strong><small>10 flexões completas</small></span>
+              <b id="pushupCount">0/10</b>
+            </button>
+            <button class="step" id="restStep">
+              <span class="step-icon muted">◷</span>
+              <span><strong>2. Descanso</strong><small>30 segundos</small></span>
+              <b id="restCount">00:30</b>
+            </button>
+            <button class="step" id="doneStep">
+              <span class="step-icon muted">✓</span>
+              <span><strong>3. Conclusão</strong><small>Marque como concluído</small></span>
+              <b id="doneState"></b>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="unlock-rule">
+        <span>♢</span>
+        <p>Ao concluir, o TikTok será desbloqueado por 15 minutos.</p>
+        <button>Alterar</button>
+      </section>
+
+      <button class="primary" id="activateButton">▣ Ativar ritual e bloquear apps</button>
+
+      <section class="schedule">
+        <span>□</span>
+        <p>Programação: Todos os dias, o dia todo</p>
+        <button>Alterar</button>
+      </section>
+
+      <nav class="tabs" aria-label="Navegação principal">
+        <button class="selected">▣<span>Bloqueios</span></button>
+        <button>▥<span>Relatórios</span></button>
+        <button>◌<span>Descobrir</span></button>
+        <button>⚙<span>Ajustes</span></button>
+      </nav>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
