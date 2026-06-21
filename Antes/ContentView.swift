@@ -603,7 +603,7 @@ private struct ScheduleRow: View {
 
 private struct AppFooterView: View {
     var body: some View {
-        Text("Criado com cuidado pela equipe Antes.")
+        Text("Criado com cuidado pela equipe Antes. ❤️")
             .font(.system(size: 13, weight: .semibold))
             .foregroundStyle(Color.antesMuted)
             .frame(maxWidth: .infinity)
