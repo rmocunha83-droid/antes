@@ -103,9 +103,14 @@ private struct HeaderView: View {
                 Text("Antes")
                     .font(.system(size: 42, weight: .black, design: .rounded))
                     .foregroundStyle(Color.antesInk)
-                Text("Foco primeiro. Apps depois.")
-                    .font(.system(size: 19, weight: .medium))
-                    .foregroundStyle(Color.antesMuted)
+                HStack(spacing: 9) {
+                    RoundedRectangle(cornerRadius: 2, style: .continuous)
+                        .fill(Color.antesGreen)
+                        .frame(width: 4, height: 24)
+                    Text("Foco primeiro. Apps depois.")
+                        .font(.system(size: 19, weight: .medium))
+                        .foregroundStyle(Color.antesMuted)
+                }
             }
 
             Spacer()
