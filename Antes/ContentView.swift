@@ -4,7 +4,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var habitText = "10 flexões antes do TikTok"
     @State private var selectedSuggestion: HabitSuggestion = .fitness
-    @State private var selectedTab: AppTab = .blocks
+    @State private var profileIsPresented = false
     @State private var lockedApps = LockedApp.samples
     @State private var pushupCount = 0
     @State private var restSeconds = 30
@@ -18,54 +18,44 @@ struct ContentView: View {
     }
 
     var body: some View {
-        TabView(selection: $selectedTab) {
-            NavigationStack {
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 28) {
-                        HeaderView()
-                        LockedAppsSection(apps: $lockedApps)
-                        HabitComposerSection(
-                            habitText: $habitText,
-                            selectedSuggestion: $selectedSuggestion,
-                            isGenerating: isGeneratingRitual,
-                            errorMessage: generationError,
-                            generateAction: generateRitual
-                        )
-                        RitualPreviewSection(
-                            habitText: habitText,
-                            ritual: generatedRitual,
-                            pushupCount: $pushupCount,
-                            restSeconds: $restSeconds
-                        )
-                        UnlockRuleSection()
-                        ActivateButton(isActive: $ritualIsActive, lockedAppsCount: selectedApps.count)
-                        ScheduleRow()
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 28) {
+                    HeaderView {
+                        profileIsPresented = true
                     }
-                    .padding(.horizontal, 22)
-                    .padding(.top, 26)
-                    .padding(.bottom, 24)
+                    LockedAppsSection(apps: $lockedApps)
+                    HabitComposerSection(
+                        habitText: $habitText,
+                        selectedSuggestion: $selectedSuggestion,
+                        isGenerating: isGeneratingRitual,
+                        errorMessage: generationError,
+                        generateAction: generateRitual
+                    )
+                    RitualPreviewSection(
+                        habitText: habitText,
+                        ritual: generatedRitual,
+                        pushupCount: $pushupCount,
+                        restSeconds: $restSeconds
+                    )
+                    UnlockRuleSection()
+                    ActivateButton(isActive: $ritualIsActive, lockedAppsCount: selectedApps.count)
+                    ScheduleRow()
+                    AppFooterView()
                 }
-                .background(Color.antesBackground)
-                .navigationBarTitleDisplayMode(.inline)
+                .padding(.horizontal, 22)
+                .padding(.top, 26)
+                .padding(.bottom, 30)
             }
-            .tabItem {
-                Label("Bloqueios", systemImage: selectedTab == .blocks ? "lock.fill" : "lock")
-            }
-            .tag(AppTab.blocks)
-
-            ReportsPlaceholderView()
-                .tabItem { Label("Relatórios", systemImage: "chart.bar") }
-                .tag(AppTab.reports)
-
-            DiscoverPlaceholderView()
-                .tabItem { Label("Descobrir", systemImage: "safari") }
-                .tag(AppTab.discover)
-
-            SettingsPlaceholderView()
-                .tabItem { Label("Ajustes", systemImage: "gearshape") }
-                .tag(AppTab.settings)
+            .background(Color.antesBackground)
+            .navigationBarTitleDisplayMode(.inline)
         }
         .tint(.antesBlue)
+        .sheet(isPresented: $profileIsPresented) {
+            ProfileSheet()
+                .presentationDetents([.medium])
+                .presentationDragIndicator(.visible)
+        }
     }
 
     private func generateRitual() {
@@ -97,6 +87,8 @@ struct ContentView: View {
 }
 
 private struct HeaderView: View {
+    let profileAction: () -> Void
+
     var body: some View {
         HStack(alignment: .top) {
             VStack(alignment: .leading, spacing: 5) {
@@ -127,10 +119,17 @@ private struct HeaderView: View {
                 .fixedSize(horizontal: true, vertical: false)
                 .accessibilityLabel("Sequência de 7 dias")
 
-                Button(action: {}) {
-                    Image(systemName: "person.circle")
-                        .font(.system(size: 34, weight: .regular))
-                        .foregroundStyle(Color.antesMuted)
+                Button(action: profileAction) {
+                    Image("ProfileAvatar")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 42, height: 42)
+                        .clipShape(Circle())
+                        .overlay {
+                            Circle()
+                                .stroke(.white, lineWidth: 2)
+                        }
+                        .shadow(color: .black.opacity(0.14), radius: 10, y: 5)
                 }
                 .buttonStyle(.plain)
                 .accessibilityLabel("Perfil")
@@ -602,53 +601,86 @@ private struct ScheduleRow: View {
     }
 }
 
-private struct ReportsPlaceholderView: View {
+private struct AppFooterView: View {
     var body: some View {
-        PlaceholderScreen(title: "Relatórios", subtitle: "Veja quanto tempo você recuperou nesta semana.", systemImage: "chart.bar.fill")
+        Text("Criado com cuidado pela equipe Antes.")
+            .font(.system(size: 13, weight: .semibold))
+            .foregroundStyle(Color.antesMuted)
+            .frame(maxWidth: .infinity)
+            .padding(.top, 6)
+            .overlay(alignment: .top) {
+                Rectangle()
+                    .fill(Color.antesStroke)
+                    .frame(height: 1)
+                    .offset(y: -12)
+            }
     }
 }
 
-private struct DiscoverPlaceholderView: View {
-    var body: some View {
-        PlaceholderScreen(title: "Descobrir", subtitle: "Explore rituais para fé, saúde, gratidão e estudo.", systemImage: "safari.fill")
-    }
-}
-
-private struct SettingsPlaceholderView: View {
-    var body: some View {
-        PlaceholderScreen(title: "Ajustes", subtitle: "Configure apps, horários e desbloqueios permitidos.", systemImage: "gearshape.fill")
-    }
-}
-
-private struct PlaceholderScreen: View {
-    let title: String
-    let subtitle: String
-    let systemImage: String
+private struct ProfileSheet: View {
+    private let items: [ProfileMenuItem] = [
+        .init(title: "Relatórios", subtitle: "Tempo recuperado e progresso", systemImage: "chart.bar.fill"),
+        .init(title: "Descobrir", subtitle: "Novos rituais e hábitos", systemImage: "sparkles"),
+        .init(title: "Ajustes", subtitle: "Apps, horários e permissões", systemImage: "gearshape.fill")
+    ]
 
     var body: some View {
-        VStack(spacing: 14) {
-            Image(systemName: systemImage)
-                .font(.system(size: 42, weight: .semibold))
-                .foregroundStyle(Color.antesBlue)
-            Text(title)
-                .font(.system(size: 28, weight: .bold))
-                .foregroundStyle(Color.antesInk)
-            Text(subtitle)
-                .font(.system(size: 17, weight: .medium))
-                .multilineTextAlignment(.center)
-                .foregroundStyle(Color.antesMuted)
-                .padding(.horizontal, 32)
+        VStack(alignment: .leading, spacing: 18) {
+            HStack(spacing: 13) {
+                Image("ProfileAvatar")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 54, height: 54)
+                    .clipShape(Circle())
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("Romeu")
+                        .font(.system(size: 20, weight: .bold))
+                        .foregroundStyle(Color.antesInk)
+                    Text("Sequência ativa: 7 dias")
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundStyle(Color.antesMuted)
+                }
+            }
+
+            VStack(spacing: 8) {
+                ForEach(items) { item in
+                    Button(action: {}) {
+                        HStack(spacing: 12) {
+                            Image(systemName: item.systemImage)
+                                .font(.system(size: 17, weight: .semibold))
+                                .foregroundStyle(Color.antesBlue)
+                                .frame(width: 38, height: 38)
+                                .background(Color.antesBlue.opacity(0.08), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(item.title)
+                                    .font(.system(size: 16, weight: .bold))
+                                    .foregroundStyle(Color.antesInk)
+                                Text(item.subtitle)
+                                    .font(.system(size: 13, weight: .medium))
+                                    .foregroundStyle(Color.antesMuted)
+                            }
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .font(.system(size: 13, weight: .bold))
+                                .foregroundStyle(Color.antesMuted)
+                        }
+                        .padding(12)
+                        .background(Color.antesSoftSurface, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding(22)
         .background(Color.antesBackground)
     }
 }
 
-private enum AppTab: Hashable {
-    case blocks
-    case reports
-    case discover
-    case settings
+private struct ProfileMenuItem: Identifiable {
+    let id = UUID()
+    let title: String
+    let subtitle: String
+    let systemImage: String
 }
 
 private enum HabitSuggestion: String, CaseIterable, Identifiable {

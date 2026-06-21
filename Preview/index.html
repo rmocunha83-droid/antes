@@ -20,7 +20,25 @@
           <span aria-hidden="true">🔥</span>
           <strong>7 dias</strong>
         </div>
-        <button class="icon-button" aria-label="Perfil">◎</button>
+        <details class="profile-details">
+          <summary class="profile-button" aria-label="Abrir perfil">
+            <img src="../Antes/Assets.xcassets/ProfileAvatar.imageset/profile-avatar.png" alt="" aria-hidden="true" />
+          </summary>
+          <div class="profile-panel" aria-label="Perfil do usuário">
+            <div class="profile-summary">
+              <img src="../Antes/Assets.xcassets/ProfileAvatar.imageset/profile-avatar.png" alt="" aria-hidden="true" />
+              <div>
+                <strong>Romeu</strong>
+                <span>Sequência ativa: 7 dias</span>
+              </div>
+            </div>
+            <div class="profile-menu">
+              <button><span aria-hidden="true">📊</span><strong>Relatórios</strong><small>Tempo recuperado e progresso</small></button>
+              <button><span aria-hidden="true">✨</span><strong>Descobrir</strong><small>Novos rituais e hábitos</small></button>
+              <button><span aria-hidden="true">⚙️</span><strong>Ajustes</strong><small>Apps, horários e permissões</small></button>
+            </div>
+          </div>
+        </details>
       </header>
 
       <section class="section">
@@ -97,12 +115,7 @@
         <button>Alterar</button>
       </section>
 
-      <nav class="tabs" aria-label="Navegação principal">
-        <button class="selected"><span class="tab-icon" aria-hidden="true">🔒</span><span class="tab-label">Bloqueios</span></button>
-        <button><span class="tab-icon" aria-hidden="true">📊</span><span class="tab-label">Relatórios</span></button>
-        <button><span class="tab-icon" aria-hidden="true">✨</span><span class="tab-label">Descobrir</span></button>
-        <button><span class="tab-icon" aria-hidden="true">⚙️</span><span class="tab-label">Ajustes</span></button>
-      </nav>
+      <footer class="app-footer">Criado com cuidado pela equipe Antes.</footer>
     </main>
 
     <script src="./script.js"></script>
