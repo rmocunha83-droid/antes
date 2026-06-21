@@ -7,8 +7,8 @@
     <meta name="description" content="Antes transforma o impulso de abrir apps em pequenos rituais de foco, movimento ou pausa consciente antes da liberacao.">
     <meta property="og:title" content="Antes - Foco primeiro. Apps depois.">
     <meta property="og:description" content="Escolha apps, crie um ritual e libere as distracoes apenas depois de uma acao intencional.">
-    <meta property="og:image" content="/assets/screenshot-foco-primeiro.png">
-    <meta name="theme-color" content="#f7faf4">
+    <meta property="og:image" content="/assets/screenshot-ritual-com-ia.png">
+    <meta name="theme-color" content="#fbfdfb">
     <link rel="canonical" href="/">
     <link rel="icon" href="/assets/antes-app-icon-1024.png">
     <link rel="apple-touch-icon" href="/assets/antes-app-icon-1024.png">
@@ -16,20 +16,17 @@
       :root {
         color-scheme: light;
         font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background: #f7faf4;
+        background: #fbfdfb;
         color: #080a11;
         --ink: #080a11;
-        --charcoal: #1b2430;
         --muted: #607080;
-        --soft: #eef5f2;
         --paper: #ffffff;
+        --wash: #f4f8f5;
         --line: rgba(18, 29, 42, 0.11);
         --blue: #005bff;
+        --blue-dark: #0048cc;
         --green: #1bc26b;
-        --sage: #dceee4;
-        --peach: #ffe4d3;
-        --sun: #f7cc73;
-        --shadow: 0 28px 86px rgba(15, 25, 36, 0.14);
+        --shadow: 0 24px 70px rgba(15, 25, 36, 0.12);
       }
 
       * {
@@ -43,6 +40,7 @@
       body {
         margin: 0;
         min-width: 320px;
+        overflow-x: hidden;
         background: var(--paper);
       }
 
@@ -55,40 +53,54 @@
         color: inherit;
       }
 
-      img,
-      picture {
+      img {
         display: block;
         max-width: 100%;
       }
 
+      figure,
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
       figure {
-        margin: 0;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        overflow-wrap: break-word;
       }
 
       .site-header {
-        position: fixed;
-        z-index: 50;
-        top: 16px;
-        left: 0;
-        right: 0;
-        pointer-events: none;
+        position: sticky;
+        z-index: 20;
+        top: 0;
+        border-bottom: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.84);
+        backdrop-filter: blur(18px);
+      }
+
+      .nav,
+      .hero-inner,
+      .section-inner,
+      .footer-inner {
+        width: min(1080px, calc(100% - 32px));
+        margin: 0 auto;
       }
 
       .nav {
-        width: min(1110px, calc(100% - 32px));
-        min-height: 60px;
-        margin: 0 auto;
+        min-height: 74px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 16px;
-        border: 1px solid rgba(8, 10, 17, 0.10);
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.78);
-        padding: 7px 8px 7px 16px;
-        box-shadow: 0 18px 46px rgba(17, 28, 40, 0.10);
-        backdrop-filter: blur(22px) saturate(1.2);
-        pointer-events: auto;
+        gap: 18px;
       }
 
       .brand {
@@ -105,16 +117,16 @@
         width: 36px;
         height: 36px;
         border-radius: 10px;
-        box-shadow: 0 8px 18px rgba(8, 10, 17, 0.12);
+        box-shadow: 0 8px 18px rgba(8, 10, 17, 0.10);
       }
 
       .nav-links {
         display: flex;
         align-items: center;
-        gap: 22px;
-        color: #313d4b;
+        gap: 24px;
+        color: #344152;
         font-size: 14px;
-        font-weight: 760;
+        font-weight: 780;
       }
 
       .nav-links a {
@@ -126,9 +138,7 @@
         color: var(--blue);
       }
 
-      .store-button,
-      .nav-cta,
-      .ghost-button {
+      .button {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -142,82 +152,47 @@
         transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
       }
 
-      .store-button,
-      .nav-cta {
-        background: var(--ink);
-        color: #fff;
-        box-shadow: 0 16px 34px rgba(8, 10, 17, 0.23);
-      }
-
-      .store-button:hover,
-      .nav-cta:hover,
-      .ghost-button:hover {
+      .button:hover {
         transform: translateY(-2px);
       }
 
-      .ghost-button {
-        border: 1px solid rgba(8, 10, 17, 0.14);
-        background: rgba(255, 255, 255, 0.70);
-        color: var(--ink);
-        box-shadow: 0 12px 30px rgba(8, 10, 17, 0.08);
-        backdrop-filter: blur(14px);
+      .button.primary {
+        background: var(--blue);
+        color: #fff;
+        box-shadow: 0 16px 34px rgba(0, 91, 255, 0.24);
       }
 
-      main {
-        overflow: hidden;
+      .button.primary:hover {
+        background: var(--blue-dark);
+      }
+
+      .button.secondary {
+        border: 1px solid var(--line);
+        background: #fff;
+        color: var(--ink);
       }
 
       .hero {
-        position: relative;
-        min-height: 94svh;
-        padding: 118px 0 74px;
-        isolation: isolate;
-        background:
-          linear-gradient(90deg, rgba(247, 250, 244, 0.98) 0%, rgba(247, 250, 244, 0.90) 42%, rgba(247, 250, 244, 0.38) 74%),
-          url("/assets/screenshot-foco-primeiro.png");
-        background-size: cover;
-        background-position: center right;
-      }
-
-      .hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: -2;
-        background:
-          linear-gradient(180deg, rgba(255, 255, 255, 0) 68%, #ffffff 100%),
-          linear-gradient(130deg, rgba(27, 194, 107, 0.18), rgba(0, 91, 255, 0.10) 38%, rgba(247, 204, 115, 0.18) 78%);
-      }
-
-      .hero-inner,
-      .section-inner,
-      .footer-inner {
-        width: min(1110px, calc(100% - 32px));
-        margin: 0 auto;
+        background: linear-gradient(180deg, #fbfdfb 0%, #f3f8f4 100%);
       }
 
       .hero-inner {
         display: grid;
-        grid-template-columns: minmax(0, 0.92fr) minmax(360px, 0.72fr);
+        grid-template-columns: minmax(0, 1.02fr) minmax(280px, 0.62fr);
+        gap: 58px;
         align-items: center;
-        gap: 44px;
-      }
-
-      .hero-copy {
-        position: relative;
-        z-index: 2;
-        min-width: 0;
-        padding-top: 20px;
+        min-height: calc(100svh - 74px);
+        padding: 72px 0 58px;
       }
 
       .eyebrow {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        margin: 0 0 18px;
-        color: #155b3d;
+        margin-bottom: 18px;
+        color: #14603e;
         font-size: 12px;
-        font-weight: 900;
+        font-weight: 950;
         letter-spacing: 0;
         text-transform: uppercase;
       }
@@ -228,43 +203,34 @@
         height: 9px;
         border-radius: 999px;
         background: var(--green);
-        box-shadow: 0 0 0 6px rgba(27, 194, 107, 0.13);
-      }
-
-      h1,
-      h2,
-      h3,
-      p {
-        margin-top: 0;
-        overflow-wrap: break-word;
       }
 
       h1 {
-        max-width: 720px;
+        max-width: 670px;
         margin-bottom: 22px;
-        font-size: clamp(74px, 12vw, 164px);
-        line-height: 0.82;
+        font-size: clamp(58px, 9vw, 118px);
+        line-height: 0.87;
         letter-spacing: 0;
       }
 
       .hero-copy > p {
-        width: min(610px, 100%);
-        margin-bottom: 30px;
-        color: #344252;
-        font-size: clamp(20px, 2.6vw, 28px);
-        line-height: 1.28;
+        max-width: 550px;
+        margin-bottom: 28px;
+        color: #394758;
+        font-size: clamp(19px, 2vw, 23px);
+        line-height: 1.38;
         font-weight: 650;
       }
 
-      .hero-actions {
+      .actions {
         display: flex;
-        align-items: center;
         flex-wrap: wrap;
-        gap: 14px;
+        gap: 12px;
+        align-items: center;
       }
 
       .availability {
-        width: min(420px, 100%);
+        max-width: 440px;
         margin: 16px 0 0;
         color: #667384;
         font-size: 13px;
@@ -272,118 +238,54 @@
         font-weight: 620;
       }
 
-      .hero-visual {
-        position: relative;
-        min-height: 690px;
-      }
-
-      .phone-stack {
-        position: absolute;
-        inset: 0;
-      }
-
-      .phone-frame {
-        position: absolute;
+      .hero-phone {
+        justify-self: center;
+        width: min(306px, 100%);
         overflow: hidden;
-        border: 10px solid #111822;
-        border-radius: 44px;
+        aspect-ratio: 760 / 1644;
+        border: 9px solid #111822;
+        border-radius: 40px;
         background: #f7faf7;
         box-shadow: var(--shadow);
       }
 
-      .phone-frame img {
+      .hero-phone img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
 
-      .phone-frame.main {
-        right: 42px;
-        top: 10px;
-        width: min(330px, 72vw);
-        aspect-ratio: 760 / 1644;
-        z-index: 3;
-      }
-
-      .phone-frame.side {
-        left: 0;
-        top: 126px;
-        width: 230px;
-        aspect-ratio: 760 / 1644;
-        z-index: 1;
-        opacity: 0.96;
-        transform: rotate(-7deg);
-      }
-
-      .phone-frame.back {
-        right: 0;
-        bottom: 8px;
-        width: 218px;
-        aspect-ratio: 760 / 1644;
-        z-index: 0;
-        opacity: 0.78;
-        transform: rotate(8deg);
-      }
-
-      .metric-card {
-        position: absolute;
-        z-index: 4;
-        left: 24px;
-        bottom: 92px;
-        width: 244px;
-        border: 1px solid rgba(8, 10, 17, 0.10);
-        border-radius: 26px;
-        background: rgba(255, 255, 255, 0.78);
-        padding: 18px;
-        box-shadow: 0 22px 60px rgba(8, 10, 17, 0.14);
-        backdrop-filter: blur(20px);
-      }
-
-      .metric-card strong {
-        display: block;
-        margin-bottom: 6px;
-        font-size: 15px;
-      }
-
-      .metric-card span {
-        color: var(--muted);
-        font-size: 14px;
-        line-height: 1.38;
-      }
-
       .section {
-        position: relative;
-        padding: 104px 0;
+        padding: 96px 0;
         background: #fff;
       }
 
       .section.alt {
-        background:
-          linear-gradient(180deg, #f7faf4 0%, #ffffff 100%);
+        background: linear-gradient(180deg, #f7faf7 0%, #ffffff 100%);
       }
 
       .section.compact {
-        padding: 72px 0;
+        padding: 68px 0;
       }
 
       .section-head {
         display: grid;
-        grid-template-columns: minmax(0, 0.92fr) minmax(280px, 0.70fr);
-        gap: 46px;
+        grid-template-columns: minmax(0, 0.88fr) minmax(280px, 0.72fr);
+        gap: 44px;
         align-items: end;
-        margin-bottom: 44px;
+        margin-bottom: 40px;
       }
 
       .section-head > *,
-      .feature-row > *,
+      .feature-grid > *,
       .cta-box > * {
         min-width: 0;
       }
 
       h2 {
         margin-bottom: 0;
-        font-size: clamp(40px, 6vw, 78px);
-        line-height: 0.94;
+        font-size: clamp(38px, 5.2vw, 68px);
+        line-height: 0.96;
         letter-spacing: 0;
       }
 
@@ -391,7 +293,7 @@
       .wide-copy {
         margin-bottom: 0;
         color: var(--muted);
-        font-size: 19px;
+        font-size: 18px;
         line-height: 1.58;
         font-weight: 560;
       }
@@ -399,50 +301,30 @@
       .steps {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 16px;
-      }
-
-      .step,
-      .benefit,
-      .faq-item,
-      .proof-item {
+        overflow: hidden;
         border: 1px solid var(--line);
-        border-radius: 28px;
-        background: rgba(255, 255, 255, 0.82);
-        box-shadow: 0 18px 58px rgba(18, 29, 42, 0.07);
-        backdrop-filter: blur(18px);
+        border-radius: 26px;
+        background: var(--line);
       }
 
       .step {
-        position: relative;
-        min-height: 280px;
-        padding: 26px;
-        overflow: hidden;
-      }
-
-      .step::after {
-        content: "";
-        position: absolute;
-        left: 26px;
-        right: 26px;
-        bottom: 0;
-        height: 5px;
-        border-radius: 999px 999px 0 0;
-        background: linear-gradient(90deg, var(--green), var(--blue), var(--sun));
+        min-height: 174px;
+        background: rgba(255, 255, 255, 0.92);
+        padding: 24px;
       }
 
       .step-number {
-        margin-bottom: 48px;
-        color: rgba(8, 10, 17, 0.10);
-        font-size: 66px;
-        line-height: 0.8;
+        display: inline-flex;
+        margin-bottom: 28px;
+        color: var(--blue);
+        font-size: 13px;
         font-weight: 950;
       }
 
       h3 {
-        margin-bottom: 12px;
-        font-size: 22px;
-        line-height: 1.08;
+        margin-bottom: 10px;
+        font-size: 21px;
+        line-height: 1.1;
         letter-spacing: 0;
       }
 
@@ -452,42 +334,30 @@
       .proof-item p {
         margin-bottom: 0;
         color: var(--muted);
-        font-size: 16px;
-        line-height: 1.52;
+        font-size: 15px;
+        line-height: 1.5;
       }
 
-      .feature-row {
+      .feature-grid {
         display: grid;
-        grid-template-columns: minmax(280px, 0.86fr) minmax(0, 1fr);
-        gap: 52px;
+        grid-template-columns: minmax(0, 0.92fr) minmax(280px, 0.78fr);
+        gap: 48px;
         align-items: center;
-      }
-
-      .feature-panel {
-        position: relative;
-        min-height: 620px;
-        border-radius: 42px;
-        background:
-          linear-gradient(145deg, rgba(27, 194, 107, 0.16), rgba(0, 91, 255, 0.08) 48%, rgba(247, 204, 115, 0.18)),
-          #f7faf4;
-        overflow: hidden;
-      }
-
-      .feature-panel .phone-frame {
-        left: 50%;
-        top: 52px;
-        width: min(315px, 78%);
-        aspect-ratio: 760 / 1644;
-        transform: translateX(-50%);
       }
 
       .feature-list {
         display: grid;
-        gap: 15px;
+        gap: 14px;
+        margin-top: 28px;
       }
 
-      .benefit {
-        padding: 24px;
+      .benefit,
+      .faq-item,
+      .proof-item {
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: #fff;
+        padding: 22px;
       }
 
       .benefit h3 {
@@ -495,7 +365,7 @@
         align-items: center;
         gap: 12px;
         margin-bottom: 8px;
-        font-size: 21px;
+        font-size: 20px;
       }
 
       .mark {
@@ -506,61 +376,40 @@
         align-items: center;
         justify-content: center;
         border-radius: 999px;
-        background: #e8f8ef;
-        color: #08753d;
-        font-size: 15px;
+        background: #eef5ff;
+        color: var(--blue);
+        font-size: 14px;
         font-weight: 950;
       }
 
-      .showcase-wrap {
-        position: relative;
-        border-radius: 44px;
-        background:
-          linear-gradient(145deg, rgba(255, 228, 211, 0.66), rgba(238, 245, 242, 0.78)),
-          #f7faf4;
-        padding: 34px;
+      .feature-shot {
         overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: #f3f8f4;
+        box-shadow: 0 18px 58px rgba(18, 29, 42, 0.08);
       }
 
-      .showcase {
-        position: relative;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 22px;
-        align-items: center;
-      }
-
-      .phone-shot {
-        overflow: hidden;
-        border: 9px solid #101822;
-        border-radius: 38px;
-        background: #f4f7f5;
-        box-shadow: 0 24px 70px rgba(8, 10, 17, 0.16);
-      }
-
-      .phone-shot:nth-child(2) {
-        transform: translateY(32px) scale(1.04);
-      }
-
-      .phone-shot:nth-child(3) {
-        transform: translateY(-18px);
+      .feature-shot img {
+        width: 100%;
+        aspect-ratio: 760 / 1644;
+        object-fit: cover;
       }
 
       .screens {
         display: grid;
         grid-template-columns: repeat(5, minmax(220px, 1fr));
-        gap: 18px;
+        gap: 16px;
         overflow-x: auto;
-        padding: 8px 0 20px;
+        padding: 4px 0 18px;
         scrollbar-color: #b8c6c1 transparent;
       }
 
       .screen-card {
         overflow: hidden;
-        border: 1px solid rgba(8, 10, 17, 0.10);
-        border-radius: 28px;
+        border: 1px solid var(--line);
+        border-radius: 24px;
         background: #f7faf7;
-        box-shadow: 0 20px 56px rgba(8, 10, 17, 0.10);
       }
 
       .screen-card img {
@@ -572,91 +421,55 @@
       .proof-band {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 16px;
-      }
-
-      .proof-item {
-        min-height: 198px;
-        padding: 26px;
+        gap: 14px;
       }
 
       .proof-kicker {
         display: inline-flex;
-        margin-bottom: 24px;
-        color: #14583b;
+        margin-bottom: 18px;
+        color: var(--blue);
         font-size: 12px;
-        font-weight: 900;
+        font-weight: 950;
         text-transform: uppercase;
       }
 
       .proof-item strong {
         display: block;
         margin-bottom: 10px;
-        font-size: 22px;
-        line-height: 1.08;
+        font-size: 21px;
+        line-height: 1.1;
       }
 
       .faq {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 16px;
+        gap: 14px;
       }
 
-      .faq-item {
-        padding: 26px;
-      }
-
-      .cta {
-        position: relative;
-        padding: 108px 0 96px;
-        background: #080a11;
-        color: #fff;
-        overflow: hidden;
-      }
-
-      .cta::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background:
-          linear-gradient(120deg, rgba(27, 194, 107, 0.24), rgba(0, 91, 255, 0.16) 42%, rgba(247, 204, 115, 0.18)),
-          url("/assets/screenshot-menos-impulso.png");
-        background-size: cover;
-        background-position: center;
-        opacity: 0.50;
+      .cta-section {
+        padding: 92px 0;
+        background: linear-gradient(180deg, #eef5ff 0%, #ffffff 100%);
       }
 
       .cta-box {
-        position: relative;
-        z-index: 1;
         display: grid;
         grid-template-columns: minmax(0, 1fr) auto;
-        gap: 38px;
+        gap: 34px;
         align-items: center;
       }
 
-      .cta .eyebrow {
-        color: #bdf2d5;
-      }
-
-      .cta h2 {
-        max-width: 760px;
+      .cta-box h2 {
+        max-width: 690px;
         margin-bottom: 18px;
       }
 
-      .cta p {
-        max-width: 670px;
+      .cta-box p {
+        max-width: 650px;
         margin-bottom: 0;
-        color: rgba(255, 255, 255, 0.78);
-        font-size: 20px;
+        color: #3f4e60;
+        font-size: 19px;
         line-height: 1.5;
-        font-weight: 610;
-      }
-
-      .cta .store-button {
-        background: #fff;
-        color: var(--ink);
-        box-shadow: 0 22px 54px rgba(0, 0, 0, 0.28);
+        font-weight: 620;
       }
 
       .site-footer {
@@ -665,7 +478,7 @@
       }
 
       .footer-inner {
-        min-height: 92px;
+        min-height: 88px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -684,90 +497,48 @@
         text-decoration: none;
       }
 
-      @media (max-width: 980px) {
-        .nav-links a:not(.nav-cta) {
+      @media (max-width: 920px) {
+        .nav-links a:not(.button) {
           display: none;
-        }
-
-        .hero {
-          min-height: auto;
-          padding-top: 106px;
-          background:
-            linear-gradient(180deg, rgba(247, 250, 244, 0.99) 0%, rgba(247, 250, 244, 0.92) 42%, rgba(247, 250, 244, 0.30) 100%),
-            url("/assets/screenshot-foco-primeiro.png");
-          background-size: 128%;
-          background-position: center bottom;
         }
 
         .hero-inner,
         .section-head,
-        .feature-row,
+        .feature-grid,
         .cta-box {
           grid-template-columns: 1fr;
         }
 
-        .hero-visual {
-          min-height: 520px;
+        .hero-inner {
+          min-height: auto;
         }
 
-        .phone-frame.main {
-          left: 50%;
-          right: auto;
-          width: min(290px, 68vw);
-          transform: translateX(-50%);
-        }
-
-        .phone-frame.side {
-          left: 4%;
-          width: min(205px, 45vw);
-        }
-
-        .phone-frame.back {
-          right: 4%;
-          width: min(190px, 42vw);
-        }
-
-        .metric-card {
-          left: 50%;
-          bottom: 22px;
-          transform: translateX(-50%);
+        .hero-phone {
+          width: min(260px, 68vw);
+          transform: translateX(-10px);
         }
 
         .steps,
+        .proof-band,
         .faq {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .showcase {
-          grid-template-columns: repeat(3, minmax(190px, 1fr));
-          overflow-x: auto;
-          padding-bottom: 24px;
-        }
-
-        .proof-band {
           grid-template-columns: 1fr;
+        }
+
+        .feature-shot {
+          width: min(330px, 100%);
         }
       }
 
-      @media (max-width: 640px) {
-        .site-header {
-          top: 10px;
-        }
-
+      @media (max-width: 620px) {
         .nav,
         .hero-inner,
         .section-inner,
         .footer-inner {
           width: calc(100vw - 24px);
-          max-width: 1110px;
         }
 
         .nav {
-          width: 56px;
-          min-height: 56px;
-          margin-left: 12px;
-          padding: 8px;
-          justify-content: center;
+          min-height: 64px;
         }
 
         .brand span {
@@ -775,100 +546,76 @@
         }
 
         .nav-links {
-          display: none;
+          gap: 0;
+        }
+
+        .nav-links .button {
+          min-height: 40px;
+          padding: 0 14px;
+          font-size: 13px;
+        }
+
+        .hero-inner {
+          gap: 42px;
+          padding: 54px 0 46px;
         }
 
         h1 {
-          font-size: clamp(76px, 24vw, 112px);
+          max-width: 340px;
+          font-size: clamp(44px, 13vw, 54px);
+          line-height: 0.94;
         }
 
-        .hero-copy,
-        .section-head > *,
-        .wide-copy {
+        .hero-copy {
           max-width: 340px;
         }
 
         h2 {
-          font-size: clamp(32px, 10vw, 40px);
+          font-size: clamp(32px, 10vw, 42px);
         }
 
         .hero-copy > p,
         .section-head p,
         .wide-copy,
-        .cta p {
+        .cta-box p {
           font-size: 16px;
         }
 
-        .hero-actions {
+        .actions {
           align-items: stretch;
           flex-direction: column;
-          width: min(260px, 100%);
+          width: min(280px, 100%);
         }
 
-        .store-button,
-        .ghost-button {
-          min-height: 48px;
+        .button {
           width: 100%;
         }
 
-        .availability {
-          width: min(300px, 100%);
-          font-size: 12px;
-          line-height: 1.38;
-        }
-
-        .hero-visual {
-          min-height: 455px;
-        }
-
-        .phone-frame {
-          border-width: 7px;
-          border-radius: 34px;
-        }
-
-        .phone-frame.main {
-          width: min(244px, 67vw);
-        }
-
-        .phone-frame.side,
-        .phone-frame.back {
-          width: min(164px, 44vw);
-        }
-
-        .metric-card {
-          width: min(246px, 86vw);
-          bottom: 4px;
-        }
-
         .section {
-          padding: 74px 0;
+          padding: 72px 0;
         }
 
         .section.compact {
           padding: 54px 0;
         }
 
-        .steps,
-        .faq {
-          grid-template-columns: 1fr;
+        .steps {
+          border-radius: 22px;
         }
 
-        .step {
-          min-height: auto;
-        }
-
-        .feature-panel {
-          min-height: 520px;
-          border-radius: 30px;
-        }
-
-        .showcase-wrap {
-          padding: 18px;
-          border-radius: 30px;
+        .step,
+        .benefit,
+        .faq-item,
+        .proof-item {
+          padding: 20px;
         }
 
         .screens {
-          grid-template-columns: repeat(5, minmax(210px, 1fr));
+          grid-template-columns: repeat(5, minmax(208px, 1fr));
+        }
+
+        .cta-section {
+          padding: 72px 0;
         }
 
         .footer-inner {
@@ -889,8 +636,8 @@
         <div class="nav-links">
           <a href="#como-funciona">Como funciona</a>
           <a href="#recursos">Recursos</a>
-          <a href="#duvidas">Duvidas</a>
-          <a class="nav-cta" href="https://apps.apple.com/br/search?term=Antes%20Romeu%20Cunha" aria-label="Instalar Antes na App Store">App Store</a>
+          <a href="#duvidas">Dúvidas</a>
+          <a class="button primary" href="https://apps.apple.com/br/search?term=Antes%20Romeu%20Cunha" aria-label="Instalar Antes na App Store">App Store</a>
         </div>
       </nav>
     </header>
@@ -899,27 +646,19 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-inner">
           <div class="hero-copy">
-            <p class="eyebrow">App para iPhone</p>
-            <h1 id="hero-title">Antes</h1>
-            <p>Foco primeiro. Apps depois. O Antes entra antes das distracoes e transforma o impulso de abrir um app em um pequeno ritual positivo.</p>
-            <div class="hero-actions">
-              <a class="store-button" href="https://apps.apple.com/br/search?term=Antes%20Romeu%20Cunha">Instalar na App Store</a>
-              <a class="ghost-button" href="#como-funciona">Ver como funciona</a>
+            <span class="eyebrow">App para iPhone</span>
+            <h1 id="hero-title">Foco primeiro.<br>Apps depois.</h1>
+            <p>O Antes transforma o impulso de abrir um app em um pequeno ritual positivo antes da liberação.</p>
+            <div class="actions">
+              <a class="button primary" href="https://apps.apple.com/br/search?term=Antes%20Romeu%20Cunha">Instalar na App Store</a>
+              <a class="button secondary" href="#como-funciona">Ver como funciona</a>
             </div>
-            <p class="availability">Quando a pagina oficial da App Store estiver publicada, este botao deve apontar para o link direto do app.</p>
+            <p class="availability">Quando a página oficial da App Store estiver publicada, este botão deve apontar para o link direto do app.</p>
           </div>
 
-          <div class="hero-visual" aria-hidden="true">
-            <div class="phone-stack">
-              <div class="phone-frame side"><img src="/assets/screenshot-apps-protegidos.png" alt=""></div>
-              <div class="phone-frame main"><img src="/assets/screenshot-ritual-com-ia.png" alt=""></div>
-              <div class="phone-frame back"><img src="/assets/screenshot-libere-por-minutos.png" alt=""></div>
-              <div class="metric-card">
-                <strong>Uma ação antes do feed.</strong>
-                <span>Escolha o hábito, conclua o ritual e libere seus apps só pelo tempo combinado.</span>
-              </div>
-            </div>
-          </div>
+          <figure class="hero-phone" aria-label="Tela do app Antes">
+            <img src="/assets/screenshot-ritual-com-ia.png" alt="Tela do Antes criando um ritual com IA antes de liberar apps">
+          </figure>
         </div>
       </section>
 
@@ -932,22 +671,22 @@
 
           <div class="steps">
             <article class="step">
-              <div class="step-number">01</div>
+              <span class="step-number">01</span>
               <h3>Escolha os apps</h3>
               <p>Selecione apps, categorias ou sites que você quer proteger usando os recursos de Tempo de Uso do iPhone.</p>
             </article>
             <article class="step">
-              <div class="step-number">02</div>
+              <span class="step-number">02</span>
               <h3>Crie um ritual</h3>
               <p>Defina uma ação curta, como flexões, água, gratidão, oração, estudo, respiração ou outro hábito seu.</p>
             </article>
             <article class="step">
-              <div class="step-number">03</div>
-              <h3>O impulso encontra pausa</h3>
+              <span class="step-number">03</span>
+              <h3>Faça a pausa</h3>
               <p>Antes de abrir a distração, o app coloca o ritual na frente e ajuda você a decidir com mais consciência.</p>
             </article>
             <article class="step">
-              <div class="step-number">04</div>
+              <span class="step-number">04</span>
               <h3>Libere por minutos</h3>
               <p>Depois de concluir o hábito, os apps são liberados temporariamente pelo tempo que você configurou.</p>
             </article>
@@ -956,13 +695,9 @@
       </section>
 
       <section class="section alt" id="recursos">
-        <div class="section-inner feature-row">
-          <div class="feature-panel" aria-hidden="true">
-            <div class="phone-frame"><img src="/assets/screenshot-foco-primeiro.png" alt=""></div>
-          </div>
-
+        <div class="section-inner feature-grid">
           <div>
-            <p class="eyebrow">Controle no momento certo</p>
+            <span class="eyebrow">Controle no momento certo</span>
             <h2>Bloqueio real, ritual curto e liberação temporária.</h2>
             <p class="wide-copy">O Antes foi feito para trocar o automático pelo intencional. Ele não tenta apagar seus apps da sua vida; ele coloca uma ação boa antes deles.</p>
 
@@ -981,27 +716,14 @@
               </article>
             </div>
           </div>
+
+          <figure class="feature-shot">
+            <img src="/assets/screenshot-apps-protegidos.png" alt="Tela mostrando apps protegidos no Antes" loading="lazy">
+          </figure>
         </div>
       </section>
 
       <section class="section">
-        <div class="section-inner">
-          <div class="section-head">
-            <h2>Uma pausa pequena antes de um hábito grande.</h2>
-            <p>O app foi desenhado para aparecer exatamente quando você iria entrar em modo automático: antes do feed, antes do vídeo, antes da rolagem infinita.</p>
-          </div>
-
-          <div class="showcase-wrap">
-            <div class="showcase" aria-label="Telas do app Antes">
-              <div class="phone-shot"><img src="/assets/screenshot-apps-protegidos.png" alt="Tela mostrando apps protegidos no Antes" loading="lazy"></div>
-              <div class="phone-shot"><img src="/assets/screenshot-ritual-com-ia.png" alt="Tela mostrando ritual gerado com IA" loading="lazy"></div>
-              <div class="phone-shot"><img src="/assets/screenshot-libere-por-minutos.png" alt="Tela mostrando liberacao temporaria depois do ritual" loading="lazy"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section alt">
         <div class="section-inner">
           <div class="section-head">
             <h2>O que você vê no app.</h2>
@@ -1022,7 +744,7 @@
         <div class="section-inner">
           <div class="proof-band">
             <article class="proof-item">
-              <span class="proof-kicker">Intencao</span>
+              <span class="proof-kicker">Intenção</span>
               <strong>Não é só um bloqueador</strong>
               <p>O objetivo é substituir o primeiro impulso por uma ação concreta, curta e escolhida por você.</p>
             </article>
@@ -1064,14 +786,14 @@
         </div>
       </section>
 
-      <section class="cta" id="app-store">
+      <section class="cta-section" id="app-store">
         <div class="section-inner cta-box">
           <div>
-            <p class="eyebrow">Disponível para iPhone</p>
+            <span class="eyebrow">Disponível para iPhone</span>
             <h2>Instale o Antes pela App Store.</h2>
             <p>Comece com um ritual pequeno antes dos apps que mais disputam sua atenção. Foco primeiro. Apps depois.</p>
           </div>
-          <a class="store-button" href="https://apps.apple.com/br/search?term=Antes%20Romeu%20Cunha">Instalar na App Store</a>
+          <a class="button primary" href="https://apps.apple.com/br/search?term=Antes%20Romeu%20Cunha">Instalar na App Store</a>
         </div>
       </section>
     </main>
