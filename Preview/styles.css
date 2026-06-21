@@ -542,11 +542,6 @@ h2 {
   transform: rotate(90deg);
 }
 
-.step-icon.muted {
-  background: #eef0f4;
-  color: var(--muted);
-}
-
 .step strong {
   display: block;
   font-size: 14px;

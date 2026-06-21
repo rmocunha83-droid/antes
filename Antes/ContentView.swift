@@ -405,7 +405,7 @@ private struct RitualPreviewSection: View {
                         title: "Descanso",
                         detail: secondStepDetail,
                         systemImage: "clock",
-                        tint: .antesMuted,
+                        tint: .antesGreen,
                         trailing: formattedSeconds,
                         progress: Double(30 - restSeconds) / 30
                     ) {
@@ -417,7 +417,7 @@ private struct RitualPreviewSection: View {
                         title: "Conclusão",
                         detail: thirdStepDetail,
                         systemImage: "checkmark",
-                        tint: pushupCount >= 10 ? .antesGreen : .antesMuted,
+                        tint: .antesGreen,
                         trailing: pushupCount >= 10 ? "OK" : "",
                         progress: pushupCount >= 10 ? 1 : 0
                     ) {
