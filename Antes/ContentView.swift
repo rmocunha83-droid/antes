@@ -102,10 +102,10 @@ private struct HeaderView: View {
             VStack(alignment: .leading, spacing: 5) {
                 Text("Antes")
                     .font(.system(size: 42, weight: .black, design: .rounded))
-                    .foregroundStyle(.antesInk)
+                    .foregroundStyle(Color.antesInk)
                 Text("Foco primeiro. Apps depois.")
                     .font(.system(size: 19, weight: .medium))
-                    .foregroundStyle(.antesMuted)
+                    .foregroundStyle(Color.antesMuted)
             }
 
             Spacer()
@@ -117,13 +117,13 @@ private struct HeaderView: View {
                     Text("7")
                         .font(.system(size: 20, weight: .bold, design: .rounded))
                 }
-                .foregroundStyle(.antesGreen)
+                .foregroundStyle(Color.antesGreen)
                 .accessibilityLabel("Sequência de 7 dias")
 
                 Button(action: {}) {
                     Image(systemName: "person.circle")
                         .font(.system(size: 34, weight: .regular))
-                        .foregroundStyle(.antesMuted)
+                        .foregroundStyle(Color.antesMuted)
                 }
                 .buttonStyle(.plain)
                 .accessibilityLabel("Perfil")
@@ -142,10 +142,10 @@ private struct LockedAppsSection: View {
                 VStack(alignment: .leading, spacing: 4) {
                     Text("Apps bloqueados hoje")
                         .font(.system(size: 22, weight: .bold))
-                        .foregroundStyle(.antesInk)
+                        .foregroundStyle(Color.antesInk)
                     Text("Eles só desbloqueiam após o hábito.")
                         .font(.system(size: 16, weight: .medium))
-                        .foregroundStyle(.antesMuted)
+                        .foregroundStyle(Color.antesMuted)
                 }
 
                 Spacer()
@@ -199,7 +199,7 @@ private struct LockedAppButton: View {
                     if app.isLocked {
                         Image(systemName: "lock.fill")
                             .font(.system(size: 11, weight: .bold))
-                            .foregroundStyle(.antesMuted)
+                            .foregroundStyle(Color.antesMuted)
                             .frame(width: 28, height: 28)
                             .background(.white, in: Circle())
                             .shadow(color: .black.opacity(0.08), radius: 6, y: 2)
@@ -209,13 +209,13 @@ private struct LockedAppButton: View {
 
                 Text(app.name)
                     .font(.system(size: 15, weight: .bold))
-                    .foregroundStyle(.antesInk)
+                    .foregroundStyle(Color.antesInk)
                     .lineLimit(1)
                     .minimumScaleFactor(0.8)
 
                 Text(app.isLocked ? "Bloqueado" : "Livre")
                     .font(.system(size: 13, weight: .medium))
-                    .foregroundStyle(.antesMuted)
+                    .foregroundStyle(Color.antesMuted)
             }
             .frame(width: 78)
         }
@@ -238,16 +238,16 @@ private struct HabitComposerSection: View {
             HStack(spacing: 12) {
                 Image(systemName: "sparkles")
                     .font(.system(size: 27, weight: .bold))
-                    .foregroundStyle(.antesGreen)
+                    .foregroundStyle(Color.antesGreen)
 
                 Text("Crie seu hábito com IA")
                     .font(.system(size: 24, weight: .bold))
-                    .foregroundStyle(.antesInk)
+                    .foregroundStyle(Color.antesInk)
             }
 
             Text("Descreva o que você quer fazer antes de desbloquear seus apps. A IA cria o ritual ideal para você.")
                 .font(.system(size: 16, weight: .regular))
-                .foregroundStyle(.antesMuted)
+                .foregroundStyle(Color.antesMuted)
                 .lineSpacing(3)
 
             HStack(spacing: 8) {
@@ -261,7 +261,7 @@ private struct HabitComposerSection: View {
                 } label: {
                     Image(systemName: "xmark")
                         .font(.system(size: 16, weight: .medium))
-                        .foregroundStyle(.antesMuted)
+                        .foregroundStyle(Color.antesMuted)
                 }
                 .accessibilityLabel("Limpar hábito")
             }
@@ -360,10 +360,10 @@ private struct RitualPreviewSection: View {
             HStack(alignment: .center, spacing: 10) {
                 Text(ritual?.title ?? "Prévia do ritual gerado pela IA")
                     .font(.system(size: 20, weight: .bold))
-                    .foregroundStyle(.antesInk)
+                    .foregroundStyle(Color.antesInk)
                 Text("Novo")
                     .font(.system(size: 13, weight: .bold))
-                    .foregroundStyle(.antesGreen)
+                    .foregroundStyle(Color.antesGreen)
                     .padding(.horizontal, 10)
                     .padding(.vertical, 5)
                     .background(Color.antesGreen.opacity(0.12), in: Capsule())
@@ -371,7 +371,7 @@ private struct RitualPreviewSection: View {
 
             Text(ritualSubtitle)
                 .font(.system(size: 15, weight: .medium))
-                .foregroundStyle(.antesMuted)
+                .foregroundStyle(Color.antesMuted)
 
             HStack(alignment: .center, spacing: 18) {
                 Image("PushupHabit")
@@ -480,10 +480,10 @@ private struct StepRow: View {
                 VStack(alignment: .leading, spacing: 2) {
                     Text("\(number). \(title)")
                         .font(.system(size: 15, weight: .bold))
-                        .foregroundStyle(.antesInk)
+                        .foregroundStyle(Color.antesInk)
                     Text(detail)
                         .font(.system(size: 13, weight: .medium))
-                        .foregroundStyle(.antesMuted)
+                        .foregroundStyle(Color.antesMuted)
                 }
 
                 Spacer(minLength: 6)
@@ -500,7 +500,7 @@ private struct StepRow: View {
                             .rotationEffect(.degrees(-90))
                         Text(trailing)
                             .font(.system(size: 12, weight: .bold, design: .rounded))
-                            .foregroundStyle(.antesMuted)
+                            .foregroundStyle(Color.antesMuted)
                     }
                 }
             }
@@ -515,11 +515,11 @@ private struct UnlockRuleSection: View {
         HStack(spacing: 12) {
             Image(systemName: "shield.checkered")
                 .font(.system(size: 24, weight: .semibold))
-                .foregroundStyle(.antesBlue)
+                .foregroundStyle(Color.antesBlue)
 
             Text("Ao concluir, o TikTok será desbloqueado por 15 minutos.")
                 .font(.system(size: 15, weight: .medium))
-                .foregroundStyle(.antesMuted)
+                .foregroundStyle(Color.antesMuted)
                 .fixedSize(horizontal: false, vertical: true)
 
             Spacer(minLength: 8)
@@ -569,11 +569,11 @@ private struct ScheduleRow: View {
         HStack(spacing: 12) {
             Image(systemName: "calendar")
                 .font(.system(size: 22, weight: .medium))
-                .foregroundStyle(.antesMuted)
+                .foregroundStyle(Color.antesMuted)
                 .frame(width: 28)
             Text("Programação: Todos os dias, o dia todo")
                 .font(.system(size: 15, weight: .medium))
-                .foregroundStyle(.antesMuted)
+                .foregroundStyle(Color.antesMuted)
                 .lineLimit(2)
             Spacer()
             Button("Alterar") {}
@@ -609,14 +609,14 @@ private struct PlaceholderScreen: View {
         VStack(spacing: 14) {
             Image(systemName: systemImage)
                 .font(.system(size: 42, weight: .semibold))
-                .foregroundStyle(.antesBlue)
+                .foregroundStyle(Color.antesBlue)
             Text(title)
                 .font(.system(size: 28, weight: .bold))
-                .foregroundStyle(.antesInk)
+                .foregroundStyle(Color.antesInk)
             Text(subtitle)
                 .font(.system(size: 17, weight: .medium))
                 .multilineTextAlignment(.center)
-                .foregroundStyle(.antesMuted)
+                .foregroundStyle(Color.antesMuted)
                 .padding(.horizontal, 32)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
