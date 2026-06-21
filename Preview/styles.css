@@ -403,6 +403,10 @@ h2 {
   font-weight: 900;
 }
 
+.step-icon.energy {
+  transform: rotate(90deg);
+}
+
 .step-icon.muted {
   background: #eef0f4;
   color: var(--muted);
