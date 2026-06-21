@@ -584,7 +584,7 @@ private struct ScheduleRow: View {
                 .font(.system(size: 22, weight: .medium))
                 .foregroundStyle(Color.antesMuted)
                 .frame(width: 28)
-            Text("Programação: Todos os dias, o dia todo")
+            Text("Programação: todos os dias, o dia todo")
                 .font(.system(size: 15, weight: .medium))
                 .foregroundStyle(Color.antesMuted)
                 .lineLimit(2)
