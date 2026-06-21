@@ -11,3 +11,9 @@ xcuserdata/
 
 node_modules/
 npm-debug.log*
+
+outputs/simulator/
+outputs/**/workers/
+outputs/**/preflight/
+outputs/**/codex-exec-image-results.json
+outputs/**/*.log

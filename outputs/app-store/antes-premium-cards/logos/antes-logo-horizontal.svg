@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="520" viewBox="0 0 1600 520">
+<rect width="1600" height="520" fill="#fff"/>
+<g>
+<rect x="144" y="158" width="90" height="204" rx="26" fill="#005BFF"/>
+<rect x="246" y="158" width="90" height="204" rx="26" fill="#005BFF"/>
+<rect x="198" y="254" width="84" height="62" rx="22" fill="#12AF56"/>
+</g>
+<text x="470" y="322" font-family="SF Pro Display, Helvetica Neue, Arial, sans-serif" font-size="154" font-weight="900" fill="#080A11">Antes</text>
+<text x="480" y="397" font-family="SF Pro Text, Helvetica Neue, Arial, sans-serif" font-size="42" fill="#5B6273">Foco primeiro. Apps depois.</text>
+</svg>

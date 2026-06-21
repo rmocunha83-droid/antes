@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>StatusRow Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      .status-preview-phone {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .status-preview-header {
+        padding-bottom: 14px;
+      }
+
+      .status-preview-header h1 {
+        font-size: 34px;
+        line-height: 1;
+      }
+
+      .status-preview-header p {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.4;
+        font-weight: 600;
+      }
+
+      .status-row {
+        min-height: 76px;
+        display: grid;
+        grid-template-columns: 28px minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 12px;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: white;
+      }
+
+      .status-row-icon {
+        width: 28px;
+        display: grid;
+        place-items: center;
+        font-size: 22px;
+        font-weight: 900;
+        line-height: 1;
+      }
+
+      .status-row-icon.green {
+        color: var(--green);
+      }
+
+      .status-row-icon.muted {
+        color: var(--muted);
+      }
+
+      .status-row-icon.blue {
+        color: var(--blue);
+      }
+
+      .status-row-copy {
+        min-width: 0;
+      }
+
+      .status-row-copy strong {
+        display: block;
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.18;
+        font-weight: 800;
+      }
+
+      .status-row-copy span {
+        display: block;
+        margin-top: 3px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.3;
+        font-weight: 600;
+      }
+
+      .status-row-action {
+        border: 0;
+        background: transparent;
+        color: var(--blue);
+        font-size: 15px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .status-preview-note {
+        margin-top: 14px;
+        padding: 14px;
+        border-radius: 10px;
+        background: var(--soft);
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.4;
+        font-weight: 650;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="phone status-preview-phone" aria-label="Prévia do StatusRow">
+      <header class="status-preview-header">
+        <h1>StatusRow</h1>
+        <p>As três variações adicionadas na SwiftUI preview.</p>
+      </header>
+
+      <section class="status-row" aria-label="Antes Pro ativo">
+        <span class="status-row-icon green" aria-hidden="true">✓</span>
+        <span class="status-row-copy">
+          <strong>Antes Pro ativo</strong>
+          <span>Bloqueios e rituais premium liberados.</span>
+        </span>
+      </section>
+
+      <section class="status-row" aria-label="Antes Pro necessário">
+        <span class="status-row-icon muted" aria-hidden="true">◇</span>
+        <span class="status-row-copy">
+          <strong>Antes Pro necessário</strong>
+          <span>Use o teste de 7 dias para ativar bloqueios reais.</span>
+        </span>
+        <button class="status-row-action" type="button">Ver plano</button>
+      </section>
+
+      <section class="status-row" aria-label="Programação">
+        <span class="status-row-icon blue" aria-hidden="true">□</span>
+        <span class="status-row-copy">
+          <strong>Programação</strong>
+          <span>Todos os dias, o dia todo</span>
+        </span>
+        <button class="status-row-action" type="button">Alterar</button>
+      </section>
+
+      <p class="status-preview-note">
+        Renderização em HTML para visualização no Browser do Codex. A implementação SwiftUI está em ContentView.swift.
+      </p>
+    </main>
+  </body>
+</html>

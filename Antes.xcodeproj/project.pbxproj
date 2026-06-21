@@ -12,7 +12,61 @@
 		1A2B3C4D5E6F700100000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000013 /* Assets.xcassets */; };
 		1A2B3C4D5E6F700100000004 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000014 /* Preview Assets.xcassets */; };
 		1A2B3C4D5E6F700100000005 /* RitualGeneratorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000015 /* RitualGeneratorService.swift */; };
+		2A2B3C4D5E6F700100000001 /* ScreenTimePolicyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B3C4D5E6F700100000011 /* ScreenTimePolicyStore.swift */; };
+		2A2B3C4D5E6F700100000002 /* ScreenTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B3C4D5E6F700100000012 /* ScreenTimeController.swift */; };
+		2A2B3C4D5E6F700100000003 /* ShieldConfigurationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B3C4D5E6F700100000021 /* ShieldConfigurationExtension.swift */; };
+		2A2B3C4D5E6F700100000004 /* ScreenTimePolicyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B3C4D5E6F700100000011 /* ScreenTimePolicyStore.swift */; };
+		2A2B3C4D5E6F700100000005 /* ShieldActionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B3C4D5E6F700100000031 /* ShieldActionExtension.swift */; };
+		2A2B3C4D5E6F700100000006 /* ScreenTimePolicyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B3C4D5E6F700100000011 /* ScreenTimePolicyStore.swift */; };
+		2A2B3C4D5E6F700100000007 /* DeviceActivityMonitorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B3C4D5E6F700100000041 /* DeviceActivityMonitorExtension.swift */; };
+		2A2B3C4D5E6F700100000008 /* ScreenTimePolicyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B3C4D5E6F700100000011 /* ScreenTimePolicyStore.swift */; };
+		2A2B3C4D5E6F700100000009 /* AntesShieldConfigurationExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2A2B3C4D5E6F700100000060 /* AntesShieldConfigurationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2A2B3C4D5E6F70010000000A /* AntesShieldActionExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2A2B3C4D5E6F700100000061 /* AntesShieldActionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2A2B3C4D5E6F70010000000B /* AntesDeviceActivityMonitorExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2A2B3C4D5E6F700100000062 /* AntesDeviceActivityMonitorExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2A2B3C4D5E6F70010000000C /* SubscriptionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B3C4D5E6F700100000014 /* SubscriptionStore.swift */; };
+		2A2B3C4D5E6F70010000000D /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B3C4D5E6F700100000015 /* PaywallView.swift */; };
+		2A2B3C4D5E6F70010000000E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 2A2B3C4D5E6F700100000016 /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2A2B3C4D5E6F700100000071 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A2B3C4D5E6F700100000080 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A2B3C4D5E6F700100000080;
+			remoteInfo = AntesShieldConfigurationExtension;
+		};
+		2A2B3C4D5E6F700100000072 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A2B3C4D5E6F700100000080 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A2B3C4D5E6F700100000081;
+			remoteInfo = AntesShieldActionExtension;
+		};
+		2A2B3C4D5E6F700100000073 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A2B3C4D5E6F700100000080 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A2B3C4D5E6F700100000082;
+			remoteInfo = AntesDeviceActivityMonitorExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2A2B3C4D5E6F700100000070 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2A2B3C4D5E6F700100000009 /* AntesShieldConfigurationExtension.appex in Embed App Extensions */,
+				2A2B3C4D5E6F70010000000A /* AntesShieldActionExtension.appex in Embed App Extensions */,
+				2A2B3C4D5E6F70010000000B /* AntesDeviceActivityMonitorExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1A2B3C4D5E6F700100000010 /* Antes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Antes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -21,10 +75,49 @@
 		1A2B3C4D5E6F700100000013 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700100000014 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700100000015 /* RitualGeneratorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RitualGeneratorService.swift; sourceTree = "<group>"; };
+		2A2B3C4D5E6F700100000011 /* ScreenTimePolicyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimePolicyStore.swift; sourceTree = "<group>"; };
+		2A2B3C4D5E6F700100000012 /* ScreenTimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeController.swift; sourceTree = "<group>"; };
+		2A2B3C4D5E6F700100000013 /* Antes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Antes.entitlements; sourceTree = "<group>"; };
+		2A2B3C4D5E6F700100000014 /* SubscriptionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionStore.swift; sourceTree = "<group>"; };
+		2A2B3C4D5E6F700100000015 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		2A2B3C4D5E6F700100000016 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		2A2B3C4D5E6F700100000021 /* ShieldConfigurationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldConfigurationExtension.swift; sourceTree = "<group>"; };
+		2A2B3C4D5E6F700100000022 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A2B3C4D5E6F700100000023 /* AntesShieldConfigurationExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AntesShieldConfigurationExtension.entitlements; sourceTree = "<group>"; };
+		2A2B3C4D5E6F700100000031 /* ShieldActionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldActionExtension.swift; sourceTree = "<group>"; };
+		2A2B3C4D5E6F700100000032 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A2B3C4D5E6F700100000033 /* AntesShieldActionExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AntesShieldActionExtension.entitlements; sourceTree = "<group>"; };
+		2A2B3C4D5E6F700100000041 /* DeviceActivityMonitorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceActivityMonitorExtension.swift; sourceTree = "<group>"; };
+		2A2B3C4D5E6F700100000042 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A2B3C4D5E6F700100000043 /* AntesDeviceActivityMonitorExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AntesDeviceActivityMonitorExtension.entitlements; sourceTree = "<group>"; };
+		2A2B3C4D5E6F700100000060 /* AntesShieldConfigurationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AntesShieldConfigurationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A2B3C4D5E6F700100000061 /* AntesShieldActionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AntesShieldActionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A2B3C4D5E6F700100000062 /* AntesDeviceActivityMonitorExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AntesDeviceActivityMonitorExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1A2B3C4D5E6F700100000020 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A2B3C4D5E6F700100000051 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A2B3C4D5E6F700100000052 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A2B3C4D5E6F700100000053 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,6 +131,9 @@
 			isa = PBXGroup;
 			children = (
 				1A2B3C4D5E6F700100000031 /* Antes */,
+				2A2B3C4D5E6F700100000020 /* AntesShieldConfigurationExtension */,
+				2A2B3C4D5E6F700100000030 /* AntesShieldActionExtension */,
+				2A2B3C4D5E6F700100000040 /* AntesDeviceActivityMonitorExtension */,
 				1A2B3C4D5E6F700100000034 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,6 +144,12 @@
 				1A2B3C4D5E6F700100000011 /* AntesApp.swift */,
 				1A2B3C4D5E6F700100000012 /* ContentView.swift */,
 				1A2B3C4D5E6F700100000015 /* RitualGeneratorService.swift */,
+				2A2B3C4D5E6F700100000011 /* ScreenTimePolicyStore.swift */,
+				2A2B3C4D5E6F700100000012 /* ScreenTimeController.swift */,
+				2A2B3C4D5E6F700100000014 /* SubscriptionStore.swift */,
+				2A2B3C4D5E6F700100000015 /* PaywallView.swift */,
+				2A2B3C4D5E6F700100000013 /* Antes.entitlements */,
+				2A2B3C4D5E6F700100000016 /* PrivacyInfo.xcprivacy */,
 				1A2B3C4D5E6F700100000013 /* Assets.xcassets */,
 				1A2B3C4D5E6F700100000032 /* Preview Content */,
 			);
@@ -62,10 +164,43 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		2A2B3C4D5E6F700100000020 /* AntesShieldConfigurationExtension */ = {
+			isa = PBXGroup;
+			children = (
+				2A2B3C4D5E6F700100000021 /* ShieldConfigurationExtension.swift */,
+				2A2B3C4D5E6F700100000022 /* Info.plist */,
+				2A2B3C4D5E6F700100000023 /* AntesShieldConfigurationExtension.entitlements */,
+			);
+			path = AntesShieldConfigurationExtension;
+			sourceTree = "<group>";
+		};
+		2A2B3C4D5E6F700100000030 /* AntesShieldActionExtension */ = {
+			isa = PBXGroup;
+			children = (
+				2A2B3C4D5E6F700100000031 /* ShieldActionExtension.swift */,
+				2A2B3C4D5E6F700100000032 /* Info.plist */,
+				2A2B3C4D5E6F700100000033 /* AntesShieldActionExtension.entitlements */,
+			);
+			path = AntesShieldActionExtension;
+			sourceTree = "<group>";
+		};
+		2A2B3C4D5E6F700100000040 /* AntesDeviceActivityMonitorExtension */ = {
+			isa = PBXGroup;
+			children = (
+				2A2B3C4D5E6F700100000041 /* DeviceActivityMonitorExtension.swift */,
+				2A2B3C4D5E6F700100000042 /* Info.plist */,
+				2A2B3C4D5E6F700100000043 /* AntesDeviceActivityMonitorExtension.entitlements */,
+			);
+			path = AntesDeviceActivityMonitorExtension;
+			sourceTree = "<group>";
+		};
 		1A2B3C4D5E6F700100000034 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				1A2B3C4D5E6F700100000010 /* Antes.app */,
+				2A2B3C4D5E6F700100000060 /* AntesShieldConfigurationExtension.appex */,
+				2A2B3C4D5E6F700100000061 /* AntesShieldActionExtension.appex */,
+				2A2B3C4D5E6F700100000062 /* AntesDeviceActivityMonitorExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,15 +215,67 @@
 				1A2B3C4D5E6F700100000050 /* Sources */,
 				1A2B3C4D5E6F700100000020 /* Frameworks */,
 				1A2B3C4D5E6F700100000060 /* Resources */,
+				2A2B3C4D5E6F700100000070 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2A2B3C4D5E6F700100000074 /* PBXTargetDependency */,
+				2A2B3C4D5E6F700100000075 /* PBXTargetDependency */,
+				2A2B3C4D5E6F700100000076 /* PBXTargetDependency */,
 			);
 			name = Antes;
 			productName = Antes;
 			productReference = 1A2B3C4D5E6F700100000010 /* Antes.app */;
 			productType = "com.apple.product-type.application";
+		};
+		2A2B3C4D5E6F700100000080 /* AntesShieldConfigurationExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A2B3C4D5E6F700100000090 /* Build configuration list for PBXNativeTarget "AntesShieldConfigurationExtension" */;
+			buildPhases = (
+				2A2B3C4D5E6F700100000054 /* Sources */,
+				2A2B3C4D5E6F700100000051 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AntesShieldConfigurationExtension;
+			productName = AntesShieldConfigurationExtension;
+			productReference = 2A2B3C4D5E6F700100000060 /* AntesShieldConfigurationExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		2A2B3C4D5E6F700100000081 /* AntesShieldActionExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A2B3C4D5E6F700100000091 /* Build configuration list for PBXNativeTarget "AntesShieldActionExtension" */;
+			buildPhases = (
+				2A2B3C4D5E6F700100000055 /* Sources */,
+				2A2B3C4D5E6F700100000052 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AntesShieldActionExtension;
+			productName = AntesShieldActionExtension;
+			productReference = 2A2B3C4D5E6F700100000061 /* AntesShieldActionExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		2A2B3C4D5E6F700100000082 /* AntesDeviceActivityMonitorExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A2B3C4D5E6F700100000092 /* Build configuration list for PBXNativeTarget "AntesDeviceActivityMonitorExtension" */;
+			buildPhases = (
+				2A2B3C4D5E6F700100000056 /* Sources */,
+				2A2B3C4D5E6F700100000053 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AntesDeviceActivityMonitorExtension;
+			productName = AntesDeviceActivityMonitorExtension;
+			productReference = 2A2B3C4D5E6F700100000062 /* AntesDeviceActivityMonitorExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -101,6 +288,15 @@
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					1A2B3C4D5E6F700100000040 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					2A2B3C4D5E6F700100000080 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					2A2B3C4D5E6F700100000081 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					2A2B3C4D5E6F700100000082 = {
 						CreatedOnToolsVersion = 26.0;
 					};
 				};
@@ -119,6 +315,9 @@
 			projectRoot = "";
 			targets = (
 				1A2B3C4D5E6F700100000040 /* Antes */,
+				2A2B3C4D5E6F700100000080 /* AntesShieldConfigurationExtension */,
+				2A2B3C4D5E6F700100000081 /* AntesShieldActionExtension */,
+				2A2B3C4D5E6F700100000082 /* AntesDeviceActivityMonitorExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -130,6 +329,7 @@
 			files = (
 				1A2B3C4D5E6F700100000003 /* Assets.xcassets in Resources */,
 				1A2B3C4D5E6F700100000004 /* Preview Assets.xcassets in Resources */,
+				2A2B3C4D5E6F70010000000E /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,10 +343,59 @@
 				1A2B3C4D5E6F700100000001 /* AntesApp.swift in Sources */,
 				1A2B3C4D5E6F700100000002 /* ContentView.swift in Sources */,
 				1A2B3C4D5E6F700100000005 /* RitualGeneratorService.swift in Sources */,
+				2A2B3C4D5E6F700100000001 /* ScreenTimePolicyStore.swift in Sources */,
+				2A2B3C4D5E6F700100000002 /* ScreenTimeController.swift in Sources */,
+				2A2B3C4D5E6F70010000000C /* SubscriptionStore.swift in Sources */,
+				2A2B3C4D5E6F70010000000D /* PaywallView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A2B3C4D5E6F700100000054 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A2B3C4D5E6F700100000003 /* ShieldConfigurationExtension.swift in Sources */,
+				2A2B3C4D5E6F700100000004 /* ScreenTimePolicyStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A2B3C4D5E6F700100000055 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A2B3C4D5E6F700100000005 /* ShieldActionExtension.swift in Sources */,
+				2A2B3C4D5E6F700100000006 /* ScreenTimePolicyStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A2B3C4D5E6F700100000056 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A2B3C4D5E6F700100000007 /* DeviceActivityMonitorExtension.swift in Sources */,
+				2A2B3C4D5E6F700100000008 /* ScreenTimePolicyStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2A2B3C4D5E6F700100000074 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A2B3C4D5E6F700100000080 /* AntesShieldConfigurationExtension */;
+			targetProxy = 2A2B3C4D5E6F700100000071 /* PBXContainerItemProxy */;
+		};
+		2A2B3C4D5E6F700100000075 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A2B3C4D5E6F700100000081 /* AntesShieldActionExtension */;
+			targetProxy = 2A2B3C4D5E6F700100000072 /* PBXContainerItemProxy */;
+		};
+		2A2B3C4D5E6F700100000076 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A2B3C4D5E6F700100000082 /* AntesDeviceActivityMonitorExtension */;
+			targetProxy = 2A2B3C4D5E6F700100000073 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1A2B3C4D5E6F7001000000A1 /* Debug */ = {
@@ -270,13 +519,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Antes/Antes.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Antes/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = L38WCHAWJ9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Antes;
+				INFOPLIST_KEY_ANTES_API_BASE_URL = "http://127.0.0.1:8790";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -300,13 +552,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Antes/Antes.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Antes/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = L38WCHAWJ9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Antes;
+				INFOPLIST_KEY_ANTES_API_BASE_URL = "http://127.0.0.1:8790";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -320,6 +575,162 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.romeucunha.Antes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2A2B3C4D5E6F7001000000B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = AntesShieldConfigurationExtension/AntesShieldConfigurationExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L38WCHAWJ9;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AntesShieldConfigurationExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.romeucunha.Antes.ShieldConfigurationExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2A2B3C4D5E6F7001000000B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = AntesShieldConfigurationExtension/AntesShieldConfigurationExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L38WCHAWJ9;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AntesShieldConfigurationExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.romeucunha.Antes.ShieldConfigurationExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2A2B3C4D5E6F7001000000C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = AntesShieldActionExtension/AntesShieldActionExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L38WCHAWJ9;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AntesShieldActionExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.romeucunha.Antes.ShieldActionExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2A2B3C4D5E6F7001000000C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = AntesShieldActionExtension/AntesShieldActionExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L38WCHAWJ9;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AntesShieldActionExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.romeucunha.Antes.ShieldActionExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2A2B3C4D5E6F7001000000D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = AntesDeviceActivityMonitorExtension/AntesDeviceActivityMonitorExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L38WCHAWJ9;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AntesDeviceActivityMonitorExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.romeucunha.Antes.DeviceActivityMonitorExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2A2B3C4D5E6F7001000000D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = AntesDeviceActivityMonitorExtension/AntesDeviceActivityMonitorExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L38WCHAWJ9;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AntesDeviceActivityMonitorExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.romeucunha.Antes.DeviceActivityMonitorExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -343,6 +754,33 @@
 			buildConfigurations = (
 				1A2B3C4D5E6F7001000000B1 /* Debug */,
 				1A2B3C4D5E6F7001000000B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A2B3C4D5E6F700100000090 /* Build configuration list for PBXNativeTarget "AntesShieldConfigurationExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A2B3C4D5E6F7001000000B1 /* Debug */,
+				2A2B3C4D5E6F7001000000B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A2B3C4D5E6F700100000091 /* Build configuration list for PBXNativeTarget "AntesShieldActionExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A2B3C4D5E6F7001000000C1 /* Debug */,
+				2A2B3C4D5E6F7001000000C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A2B3C4D5E6F700100000092 /* Build configuration list for PBXNativeTarget "AntesDeviceActivityMonitorExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A2B3C4D5E6F7001000000D1 /* Debug */,
+				2A2B3C4D5E6F7001000000D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

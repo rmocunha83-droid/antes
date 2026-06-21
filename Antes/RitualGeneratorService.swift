@@ -18,7 +18,11 @@ struct AIRitualStep: Codable, Equatable {
 }
 
 struct RitualGeneratorService {
-    private let endpoint = URL(string: "http://127.0.0.1:8790/api/generate-ritual")!
+    private var endpoint: URL {
+        let baseURLString = Bundle.main.object(forInfoDictionaryKey: "ANTES_API_BASE_URL") as? String
+        let normalizedBaseURL = (baseURLString?.isEmpty == false ? baseURLString : "http://127.0.0.1:8790") ?? "http://127.0.0.1:8790"
+        return URL(string: normalizedBaseURL)!.appending(path: "api/generate-ritual")
+    }
 
     func generate(habit: String, apps: [String]) async throws -> AIRitual {
         var request = URLRequest(url: endpoint)

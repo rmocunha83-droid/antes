@@ -158,7 +158,7 @@ function updateCounters() {
 function localPreviewRitual(habit) {
   const lower = habit.toLocaleLowerCase("pt-BR");
 
-  if (lower.includes("gratid")) {
+  if (lower.includes("gratid") || lower.includes("grato") || lower.includes("grata")) {
     return {
       title: "Gratidão antes do app",
       category: "Journaling",

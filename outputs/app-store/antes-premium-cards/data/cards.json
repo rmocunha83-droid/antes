@@ -1,0 +1,51 @@
+{
+  "appName": "Antes",
+  "locale": "pt-BR",
+  "format": {
+    "name": "iPhone 6.7 portrait",
+    "width": 1290,
+    "height": 2796
+  },
+  "cards": [
+    {
+      "id": "01-foco-primeiro",
+      "headline": "Foco primeiro.",
+      "headline2": "Apps depois.",
+      "subhead": "O Antes entra antes das distrações e transforma impulso em ritual.",
+      "screen": "home",
+      "polishLayer": "ai-ritual.png"
+    },
+    {
+      "id": "02-apps-protegidos",
+      "headline": "Escolha os apps",
+      "headline2": "que pedem pausa.",
+      "subhead": "TikTok, Instagram, YouTube, X e outros só abrem depois do hábito.",
+      "screen": "apps",
+      "polishLayer": "ai-ritual.png"
+    },
+    {
+      "id": "03-ritual-com-ia",
+      "headline": "Descreva o hábito.",
+      "headline2": "A IA cria o ritual.",
+      "subhead": "Flexões, gratidão, oração, água, estudo ou qualquer ação curta.",
+      "screen": "composer",
+      "polishLayer": "ai-ritual.png"
+    },
+    {
+      "id": "04-libere-por-minutos",
+      "headline": "Concluiu?",
+      "headline2": "Libere por minutos.",
+      "subhead": "Depois do ritual, o app volta por um tempo definido, sem virar maratona.",
+      "screen": "ritual",
+      "polishLayer": "ai-ritual.png"
+    },
+    {
+      "id": "05-menos-impulso",
+      "headline": "Menos impulso.",
+      "headline2": "Mais intenção.",
+      "subhead": "Construa pequenas vitórias antes de abrir os apps que roubam atenção.",
+      "screen": "summary",
+      "polishLayer": "ai-ritual.png"
+    }
+  ]
+}

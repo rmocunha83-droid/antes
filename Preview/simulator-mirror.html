@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Antes - Simulador</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+        background: #101114;
+        color: #f5f2ea;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        background:
+          radial-gradient(circle at 20% 18%, rgba(255, 187, 86, 0.18), transparent 28rem),
+          radial-gradient(circle at 80% 80%, rgba(77, 189, 153, 0.16), transparent 24rem),
+          #101114;
+      }
+
+      main {
+        width: min(100vw, 540px);
+        height: 100vh;
+        display: grid;
+        grid-template-rows: auto 1fr;
+        padding: 16px;
+        gap: 12px;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        min-height: 36px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0;
+      }
+
+      .status {
+        font-size: 12px;
+        color: rgba(245, 242, 234, 0.68);
+      }
+
+      .phone {
+        min-height: 0;
+        display: grid;
+        place-items: center;
+      }
+
+      img {
+        display: block;
+        height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+        border-radius: 28px;
+        background: #000;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Antes no simulador</h1>
+        <div class="status">espelho local ativo</div>
+      </header>
+      <section class="phone" aria-label="Tela do simulador iOS">
+        <img src="http://127.0.0.1:3200/stream.mjpeg" alt="Stream do simulador iOS" />
+      </section>
+    </main>
+  </body>
+</html>

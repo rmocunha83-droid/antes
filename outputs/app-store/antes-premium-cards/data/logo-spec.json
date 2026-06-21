@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Logo exploration for Antes",
+    "stage": "Logo exploration",
+    "brand_name": "Antes",
+    "anchor": "iOS app that turns screen-time blocks into positive rituals before distracting apps unlock",
+    "summary": "Premium, calm and intentional identity for a digital wellbeing app."
+  },
+  "constraints": {
+    "preserve": [
+      "brand name spelling: Antes",
+      "Portuguese positioning: Foco primeiro. Apps depois.",
+      "category: digital wellbeing, focus, habits, screen-time blocking",
+      "premium but approachable iOS product feel"
+    ],
+    "avoid": [
+      "medical or addiction-treatment claims",
+      "fake certification seals",
+      "partner logos or real app store badges",
+      "AI-generated wordmark text as final production artwork"
+    ]
+  },
+  "routes": [
+    {
+      "id": "threshold-a",
+      "label": "Threshold Mark",
+      "family": "symbol",
+      "usage_contexts": ["app icon", "launch screen", "website hero"],
+      "rationale": "A simple threshold shape signals the moment before opening an app.",
+      "best_for": "A premium app icon that feels calm and product-led.",
+      "decision_advice": "Use if the brand should own the idea of pausing at the doorway before distraction.",
+      "watch_out": "Keep the mark simple enough to survive at small icon sizes.",
+      "next_step": "Vectorize the threshold shape and test light/dark icon backgrounds."
+    },
+    {
+      "id": "unlock-ritual",
+      "label": "Ritual Unlock",
+      "family": "symbol",
+      "usage_contexts": ["app icon", "paywall", "onboarding"],
+      "rationale": "Connects the completed habit to temporary app access.",
+      "best_for": "Explaining the core mechanic quickly.",
+      "decision_advice": "Use if the icon should communicate unlock-after-action more directly.",
+      "watch_out": "Avoid looking like a generic password manager or security app.",
+      "next_step": "Refine the unlock gesture without relying on a literal lock."
+    },
+    {
+      "id": "focus-before",
+      "label": "Pause To Focus",
+      "family": "geometric",
+      "usage_contexts": ["small icon", "navigation", "social avatar"],
+      "rationale": "A pause mark becoming movement captures 'before apps' in one gesture.",
+      "best_for": "A strong small-size symbol with motion.",
+      "decision_advice": "Use if the identity should feel crisp, modern and highly recognizable.",
+      "watch_out": "Too much arrow language may feel productivity-generic.",
+      "next_step": "Simplify the mark into a two-shape vector."
+    },
+    {
+      "id": "habit-spark",
+      "label": "Habit Spark",
+      "family": "premium",
+      "usage_contexts": ["app icon", "AI feature", "marketing cards"],
+      "rationale": "Adds a controlled AI/wellness cue without making the product feel gimmicky.",
+      "best_for": "Showing rituais com IA while keeping a premium tone.",
+      "decision_advice": "Use if AI personalization should be visible in the brand system.",
+      "watch_out": "Sparkles can become generic if overused.",
+      "next_step": "Build one restrained sparkle motif for AI moments only."
+    },
+    {
+      "id": "calm-shield",
+      "label": "Calm Shield",
+      "family": "utility",
+      "usage_contexts": ["settings", "permissions", "Screen Time protection"],
+      "rationale": "Signals protection without a harsh parental-control tone.",
+      "best_for": "Trust, safety, and Screen Time permission contexts.",
+      "decision_advice": "Use if the app needs to feel more protective than expressive.",
+      "watch_out": "May drift toward antivirus or security branding.",
+      "next_step": "Soften the shield into a rounded attention-protection mark."
+    },
+    {
+      "id": "intent-loop",
+      "label": "Intent Loop",
+      "family": "adaptive",
+      "usage_contexts": ["app icon", "streaks", "progress states"],
+      "rationale": "Shows interruption of habit loops in a friendly, reusable system.",
+      "best_for": "A flexible identity that can animate through product states.",
+      "decision_advice": "Use if the brand system should extend into streak/progress motion.",
+      "watch_out": "Loops can read as generic habit trackers unless tied to the threshold idea.",
+      "next_step": "Animate the pause point as a product micro-interaction."
+    }
+  ]
+}

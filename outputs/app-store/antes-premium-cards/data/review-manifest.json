@@ -1,0 +1,37 @@
+[
+  {
+    "id": "01-01-foco-primeiro",
+    "title": "01 Foco Primeiro",
+    "src": "../final/01-01-foco-primeiro.png",
+    "href": "../final/01-01-foco-primeiro.png",
+    "index": 1
+  },
+  {
+    "id": "02-02-apps-protegidos",
+    "title": "02 Apps Protegidos",
+    "src": "../final/02-02-apps-protegidos.png",
+    "href": "../final/02-02-apps-protegidos.png",
+    "index": 2
+  },
+  {
+    "id": "03-03-ritual-com-ia",
+    "title": "03 Ritual Com Ia",
+    "src": "../final/03-03-ritual-com-ia.png",
+    "href": "../final/03-03-ritual-com-ia.png",
+    "index": 3
+  },
+  {
+    "id": "04-04-libere-por-minutos",
+    "title": "04 Libere Por Minutos",
+    "src": "../final/04-04-libere-por-minutos.png",
+    "href": "../final/04-04-libere-por-minutos.png",
+    "index": 4
+  },
+  {
+    "id": "05-05-menos-impulso",
+    "title": "05 Menos Impulso",
+    "src": "../final/05-05-menos-impulso.png",
+    "href": "../final/05-05-menos-impulso.png",
+    "index": 5
+  }
+]
