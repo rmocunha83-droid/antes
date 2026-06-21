@@ -85,16 +85,26 @@ p {
 .streak {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 5px;
-  color: var(--green);
+  color: var(--ink);
   padding-top: 8px;
   font-size: 16px;
   font-weight: 800;
   white-space: nowrap;
+  min-width: 74px;
+  flex: 0 0 auto;
 }
 
 .streak span {
   font-size: 17px;
+  flex: 0 0 auto;
+}
+
+.streak strong {
+  display: inline-block;
+  white-space: nowrap;
+  color: var(--ink);
 }
 
 .icon-button {

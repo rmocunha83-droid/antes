@@ -121,8 +121,10 @@ private struct HeaderView: View {
                         .font(.system(size: 17))
                     Text("7 dias")
                         .font(.system(size: 17, weight: .bold, design: .rounded))
+                        .foregroundStyle(Color.antesInk)
+                        .fixedSize(horizontal: true, vertical: false)
                 }
-                .foregroundStyle(Color.antesGreen)
+                .fixedSize(horizontal: true, vertical: false)
                 .accessibilityLabel("Sequência de 7 dias")
 
                 Button(action: {}) {
