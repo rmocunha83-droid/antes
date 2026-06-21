@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Antes - Foco primeiro. Apps depois.</title>
+    <meta name="description" content="Antes transforma o impulso de abrir apps em pequenos rituais de foco, movimento ou pausa consciente antes da liberacao.">
+    <meta property="og:title" content="Antes - Foco primeiro. Apps depois.">
+    <meta property="og:description" content="Escolha apps, crie um ritual e libere as distracoes apenas depois de uma acao intencional.">
+    <meta property="og:image" content="/assets/screenshot-foco-primeiro.png">
+    <meta name="theme-color" content="#f8fbf7">
+    <link rel="canonical" href="/">
+    <link rel="icon" href="/assets/antes-app-icon-1024.png">
+    <link rel="apple-touch-icon" href="/assets/antes-app-icon-1024.png">
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #f8fbf7;
+        color: #080a11;
+        --ink: #080a11;
+        --muted: #5d6675;
+        --line: #dfe7df;
+        --blue: #005bff;
+        --green: #19b765;
+        --mint: #d9f4e5;
+        --peach: #ffe4d6;
+        --paper: #ffffff;
+        --soft: #eef6f8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        background: var(--paper);
+      }
+
+      body,
+      button,
+      input {
+        font: inherit;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      figure {
+        margin: 0;
+      }
+
+      .site-header {
+        position: fixed;
+        z-index: 20;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-bottom: 1px solid rgba(8, 10, 17, 0.08);
+        background: rgba(248, 251, 247, 0.86);
+        backdrop-filter: blur(16px);
+      }
+
+      .nav {
+        width: min(1120px, calc(100% - 32px));
+        min-height: 64px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 18px;
+        font-weight: 850;
+        text-decoration: none;
+      }
+
+      .brand img {
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        color: #303746;
+        font-size: 14px;
+        font-weight: 750;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+      }
+
+      .nav-cta,
+      .store-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        border-radius: 999px;
+        background: var(--ink);
+        color: #fff;
+        padding: 0 18px;
+        font-size: 14px;
+        font-weight: 850;
+        text-decoration: none;
+        box-shadow: 0 12px 28px rgba(8, 10, 17, 0.18);
+        white-space: nowrap;
+      }
+
+      main {
+        overflow: hidden;
+      }
+
+      .hero {
+        position: relative;
+        min-height: min(780px, 88svh);
+        padding: 118px 0 56px;
+        isolation: isolate;
+        background:
+          linear-gradient(90deg, rgba(248, 251, 247, 0.98) 0%, rgba(248, 251, 247, 0.86) 38%, rgba(248, 251, 247, 0.20) 70%),
+          url("/assets/screenshot-foco-primeiro.png");
+        background-size: cover;
+        background-position: center right;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: auto 0 0;
+        height: 160px;
+        z-index: -1;
+        background: linear-gradient(0deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+      }
+
+      .hero-inner,
+      .section-inner {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .hero-copy {
+        width: min(620px, 100%);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0 0 18px;
+        color: #14583b;
+        font-size: 13px;
+        font-weight: 850;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 9px;
+        height: 9px;
+        border-radius: 999px;
+        background: var(--green);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 22px;
+        font-size: clamp(56px, 8vw, 110px);
+        line-height: 0.9;
+        letter-spacing: 0;
+      }
+
+      .hero-copy > p {
+        width: min(560px, 100%);
+        margin-bottom: 30px;
+        color: #354052;
+        font-size: clamp(19px, 2.3vw, 25px);
+        line-height: 1.35;
+        font-weight: 650;
+      }
+
+      .hero-actions {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .ghost-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        border: 1px solid rgba(8, 10, 17, 0.18);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.68);
+        padding: 0 18px;
+        color: var(--ink);
+        font-size: 14px;
+        font-weight: 850;
+        text-decoration: none;
+        backdrop-filter: blur(10px);
+      }
+
+      .availability {
+        margin-top: 18px;
+        color: #687386;
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .section {
+        padding: 84px 0;
+        background: #fff;
+      }
+
+      .section.alt {
+        background: #f7faf7;
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(280px, 0.72fr);
+        gap: 42px;
+        align-items: end;
+        margin-bottom: 42px;
+      }
+
+      h2 {
+        margin-bottom: 0;
+        font-size: clamp(36px, 5vw, 64px);
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      .section-head p,
+      .wide-copy {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 19px;
+        line-height: 1.55;
+        font-weight: 560;
+      }
+
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .step,
+      .benefit,
+      .faq-item {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+      }
+
+      .step {
+        min-height: 246px;
+        padding: 22px;
+      }
+
+      .step-number {
+        display: grid;
+        width: 42px;
+        height: 42px;
+        place-items: center;
+        margin-bottom: 28px;
+        border-radius: 50%;
+        background: var(--ink);
+        color: #fff;
+        font-weight: 900;
+      }
+
+      h3 {
+        margin-bottom: 12px;
+        font-size: 22px;
+        line-height: 1.1;
+        letter-spacing: 0;
+      }
+
+      .step p,
+      .benefit p,
+      .faq-item p {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      .feature-row {
+        display: grid;
+        grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1fr);
+        gap: 44px;
+        align-items: center;
+      }
+
+      .feature-list {
+        display: grid;
+        gap: 14px;
+      }
+
+      .benefit {
+        padding: 22px;
+      }
+
+      .benefit h3 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 8px;
+        font-size: 20px;
+      }
+
+      .mark {
+        width: 12px;
+        height: 12px;
+        flex: 0 0 auto;
+        border-radius: 50%;
+        background: var(--green);
+      }
+
+      .showcase {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .phone-shot {
+        overflow: hidden;
+        border: 1px solid rgba(8, 10, 17, 0.10);
+        border-radius: 8px;
+        background: #f4f7f5;
+        box-shadow: 0 24px 70px rgba(8, 10, 17, 0.12);
+      }
+
+      .phone-shot:nth-child(2) {
+        transform: translateY(32px);
+      }
+
+      .phone-shot:nth-child(3) {
+        transform: translateY(-18px);
+      }
+
+      .screens {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(230px, 1fr));
+        gap: 16px;
+        overflow-x: auto;
+        padding: 6px 0 18px;
+        scrollbar-color: #b8c6c1 transparent;
+      }
+
+      .screen-card {
+        overflow: hidden;
+        border-radius: 8px;
+        border: 1px solid rgba(8, 10, 17, 0.10);
+        background: #f7faf7;
+      }
+
+      .screen-card img {
+        width: 100%;
+        aspect-ratio: 760 / 1644;
+        object-fit: cover;
+      }
+
+      .proof-band {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--line);
+      }
+
+      .proof-item {
+        min-height: 184px;
+        padding: 24px;
+        background: #fff;
+      }
+
+      .proof-item strong {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 18px;
+      }
+
+      .proof-item p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      .cta {
+        padding: 92px 0 78px;
+        background:
+          linear-gradient(120deg, rgba(217, 244, 229, 0.78), rgba(255, 228, 214, 0.56)),
+          #f8fbf7;
+      }
+
+      .cta-box {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 36px;
+        align-items: center;
+      }
+
+      .cta h2 {
+        margin-bottom: 18px;
+      }
+
+      .cta p {
+        max-width: 650px;
+        margin-bottom: 0;
+        color: #384354;
+        font-size: 20px;
+        line-height: 1.5;
+        font-weight: 600;
+      }
+
+      .faq {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .faq-item {
+        padding: 22px;
+      }
+
+      .site-footer {
+        border-top: 1px solid var(--line);
+        background: #fff;
+      }
+
+      .footer-inner {
+        width: min(1120px, calc(100% - 32px));
+        min-height: 88px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        color: #5f6978;
+        font-size: 14px;
+        font-weight: 650;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 18px;
+      }
+
+      .footer-links a {
+        text-decoration: none;
+      }
+
+      @media (max-width: 900px) {
+        .nav-links a:not(.nav-cta) {
+          display: none;
+        }
+
+        .hero {
+          min-height: auto;
+          padding-top: 104px;
+          background:
+            linear-gradient(180deg, rgba(248, 251, 247, 0.99) 0%, rgba(248, 251, 247, 0.86) 48%, rgba(248, 251, 247, 0.25) 100%),
+            url("/assets/screenshot-foco-primeiro.png");
+          background-size: 115%;
+          background-position: center bottom;
+        }
+
+        .hero-copy {
+          padding-bottom: min(48vw, 280px);
+        }
+
+        .section-head,
+        .feature-row,
+        .cta-box {
+          grid-template-columns: 1fr;
+        }
+
+        .steps,
+        .faq {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .showcase {
+          grid-template-columns: repeat(3, minmax(180px, 1fr));
+          overflow-x: auto;
+          padding-bottom: 24px;
+        }
+
+        .proof-band {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .nav {
+          width: min(100% - 24px, 1120px);
+        }
+
+        .brand span {
+          display: none;
+        }
+
+        .nav-cta {
+          min-height: 40px;
+          padding: 0 14px;
+          font-size: 13px;
+        }
+
+        .hero-inner,
+        .section-inner,
+        .footer-inner {
+          width: min(100% - 24px, 1120px);
+        }
+
+        h1 {
+          font-size: clamp(50px, 17vw, 72px);
+        }
+
+        .hero-copy > p,
+        .section-head p,
+        .wide-copy,
+        .cta p {
+          font-size: 17px;
+        }
+
+        .section {
+          padding: 64px 0;
+        }
+
+        .steps,
+        .faq {
+          grid-template-columns: 1fr;
+        }
+
+        .step {
+          min-height: auto;
+        }
+
+        .screens {
+          grid-template-columns: repeat(5, minmax(210px, 1fr));
+        }
+
+        .footer-inner {
+          padding: 24px 0;
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Navegacao principal">
+        <a class="brand" href="/" aria-label="Antes">
+          <img src="/assets/antes-app-icon-1024.png" alt="">
+          <span>Antes</span>
+        </a>
+        <div class="nav-links">
+          <a href="#como-funciona">Como funciona</a>
+          <a href="#recursos">Recursos</a>
+          <a href="#duvidas">Duvidas</a>
+          <a class="nav-cta" href="https://apps.apple.com/br/search?term=Antes%20Romeu%20Cunha" aria-label="Instalar Antes na App Store">App Store</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">App para iPhone</p>
+            <h1 id="hero-title">Antes</h1>
+            <p>Foco primeiro. Apps depois. O Antes entra antes das distracoes e transforma o impulso de abrir um app em um pequeno ritual positivo.</p>
+            <div class="hero-actions">
+              <a class="store-button" href="https://apps.apple.com/br/search?term=Antes%20Romeu%20Cunha">Instalar na App Store</a>
+              <a class="ghost-button" href="#como-funciona">Ver como funciona</a>
+            </div>
+            <p class="availability">Quando a pagina oficial da App Store estiver publicada, este botao deve apontar para o link direto do app.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="como-funciona">
+        <div class="section-inner">
+          <div class="section-head">
+            <h2>Como o Antes muda o momento da distração.</h2>
+            <p>Em vez de depender de força de vontade no segundo mais difícil, você cria uma pequena barreira intencional antes dos apps que mais puxam sua atenção.</p>
+          </div>
+
+          <div class="steps">
+            <article class="step">
+              <div class="step-number">1</div>
+              <h3>Escolha os apps</h3>
+              <p>Selecione apps, categorias ou sites que você quer proteger usando os recursos de Tempo de Uso do iPhone.</p>
+            </article>
+            <article class="step">
+              <div class="step-number">2</div>
+              <h3>Crie um ritual</h3>
+              <p>Defina uma ação curta, como flexões, água, gratidão, oração, estudo, respiração ou outro hábito seu.</p>
+            </article>
+            <article class="step">
+              <div class="step-number">3</div>
+              <h3>O impulso encontra pausa</h3>
+              <p>Antes de abrir a distração, o app coloca o ritual na frente e ajuda você a decidir com mais consciência.</p>
+            </article>
+            <article class="step">
+              <div class="step-number">4</div>
+              <h3>Libere por minutos</h3>
+              <p>Depois de concluir o hábito, os apps são liberados temporariamente pelo tempo que você configurou.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="recursos">
+        <div class="section-inner feature-row">
+          <div>
+            <p class="eyebrow">Controle no momento certo</p>
+            <h2>Bloqueio real, ritual curto e liberação temporária.</h2>
+            <p class="wide-copy">O Antes foi feito para trocar o automático pelo intencional. Ele não tenta apagar seus apps da sua vida; ele coloca uma ação boa antes deles.</p>
+          </div>
+
+          <div class="feature-list">
+            <article class="benefit">
+              <h3><span class="mark"></span> Proteção pelo Tempo de Uso</h3>
+              <p>Use a infraestrutura da Apple para escolher o que fica protegido no seu iPhone.</p>
+            </article>
+            <article class="benefit">
+              <h3><span class="mark"></span> Rituais personalizados com IA</h3>
+              <p>Descreva o que você quer fazer antes de desbloquear e receba uma rotina simples para começar.</p>
+            </article>
+            <article class="benefit">
+              <h3><span class="mark"></span> Sugestões para o dia real</h3>
+              <p>Fitness, gratidão, água, oração, estudo e foco viram ações pequenas, repetíveis e fáceis de concluir.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-head">
+            <h2>Uma pausa pequena antes de um hábito grande.</h2>
+            <p>O app foi desenhado para aparecer exatamente quando você iria entrar em modo automático: antes do feed, antes do vídeo, antes da rolagem infinita.</p>
+          </div>
+
+          <div class="showcase" aria-label="Telas do app Antes">
+            <div class="phone-shot"><img src="/assets/screenshot-apps-protegidos.png" alt="Tela mostrando apps protegidos no Antes" loading="lazy"></div>
+            <div class="phone-shot"><img src="/assets/screenshot-ritual-com-ia.png" alt="Tela mostrando ritual gerado com IA" loading="lazy"></div>
+            <div class="phone-shot"><img src="/assets/screenshot-libere-por-minutos.png" alt="Tela mostrando liberacao temporaria depois do ritual" loading="lazy"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="section-inner">
+          <div class="section-head">
+            <h2>O que você vê no app.</h2>
+            <p>Os cards abaixo resumem a experiência principal: proteger os apps certos, fazer uma ação curta e voltar ao controle do seu tempo.</p>
+          </div>
+
+          <div class="screens" aria-label="Resumo visual do Antes">
+            <figure class="screen-card"><img src="/assets/screenshot-foco-primeiro.png" alt="Foco primeiro. Apps depois." loading="lazy"></figure>
+            <figure class="screen-card"><img src="/assets/screenshot-apps-protegidos.png" alt="Apps protegidos hoje" loading="lazy"></figure>
+            <figure class="screen-card"><img src="/assets/screenshot-ritual-com-ia.png" alt="Crie seu ritual com IA" loading="lazy"></figure>
+            <figure class="screen-card"><img src="/assets/screenshot-libere-por-minutos.png" alt="Libere por minutos depois do ritual" loading="lazy"></figure>
+            <figure class="screen-card"><img src="/assets/screenshot-menos-impulso.png" alt="Menos impulso, mais intencao" loading="lazy"></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <div class="proof-band">
+            <article class="proof-item">
+              <strong>Não é só um bloqueador</strong>
+              <p>O objetivo é substituir o primeiro impulso por uma ação concreta, curta e escolhida por você.</p>
+            </article>
+            <article class="proof-item">
+              <strong>Você controla a regra</strong>
+              <p>Escolha o hábito, os apps protegidos e o tempo de liberação depois da conclusão.</p>
+            </article>
+            <article class="proof-item">
+              <strong>Assinatura pela Apple</strong>
+              <p>Compras, cancelamentos e gerenciamento da assinatura acontecem pela App Store.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="duvidas">
+        <div class="section-inner">
+          <div class="section-head">
+            <h2>Dúvidas rápidas.</h2>
+            <p>O Antes apoia bem-estar digital e foco. Ele não substitui acompanhamento médico, psicológico ou tratamento de dependência.</p>
+          </div>
+
+          <div class="faq">
+            <article class="faq-item">
+              <h3>Funciona com qualquer app?</h3>
+              <p>Você escolhe apps, categorias ou sites disponíveis na seleção do Tempo de Uso do iPhone.</p>
+            </article>
+            <article class="faq-item">
+              <h3>Preciso criar conta?</h3>
+              <p>O app foi pensado para uso direto no iPhone, sem login obrigatório para começar.</p>
+            </article>
+            <article class="faq-item">
+              <h3>Como cancelo?</h3>
+              <p>Assinaturas são gerenciadas pela Apple em Ajustes, Apple ID e Assinaturas.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta" id="app-store">
+        <div class="section-inner cta-box">
+          <div>
+            <p class="eyebrow">Disponível para iPhone</p>
+            <h2>Instale o Antes pela App Store.</h2>
+            <p>Comece com um ritual pequeno antes dos apps que mais disputam sua atenção. Foco primeiro. Apps depois.</p>
+          </div>
+          <a class="store-button" href="https://apps.apple.com/br/search?term=Antes%20Romeu%20Cunha">Instalar na App Store</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span>Copyright 2026 Romeu Cunha. Antes.</span>
+        <div class="footer-links">
+          <a href="/support/">Suporte</a>
+          <a href="/privacy/">Privacidade</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
