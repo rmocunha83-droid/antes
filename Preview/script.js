@@ -20,6 +20,10 @@ const restCount = document.querySelector("#restCount");
 const doneState = document.querySelector("#doneState");
 const activateButton = document.querySelector("#activateButton");
 
+const activateLabel = "🔒 Ativar ritual e bloquear apps";
+const activeLabel = "✅ Ritual ativo para apps bloqueados";
+const generatingLabel = "✨ Gerando ritual com IA...";
+
 renderApps();
 
 document.querySelector("#editApps").addEventListener("click", () => {
@@ -63,7 +67,7 @@ activateButton.addEventListener("click", async () => {
 
   state.active = !state.active;
   activateButton.classList.toggle("active", state.active);
-  activateButton.textContent = state.active ? "✓ Ritual ativo para apps bloqueados" : "▣ Ativar ritual e bloquear apps";
+  activateButton.textContent = state.active ? activeLabel : activateLabel;
 });
 
 habitInput.addEventListener("change", generateRitual);
@@ -98,7 +102,7 @@ async function generateRitual() {
   if (!habit) return;
 
   const previous = activateButton.textContent;
-  activateButton.textContent = "Gerando ritual com IA...";
+  activateButton.textContent = generatingLabel;
   activateButton.disabled = true;
 
   try {
@@ -122,7 +126,7 @@ async function generateRitual() {
   } finally {
     activateButton.disabled = false;
     if (!state.active) {
-      activateButton.textContent = previous.includes("Gerando") ? "▣ Ativar ritual e bloquear apps" : previous;
+      activateButton.textContent = previous.includes("Gerando") ? activateLabel : previous;
     }
   }
 }
