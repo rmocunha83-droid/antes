@@ -556,7 +556,21 @@ private struct ActivateButton: View {
             .foregroundStyle(.white)
             .frame(maxWidth: .infinity)
             .frame(height: 64)
-            .background(isActive ? Color.antesGreen : Color.antesBlue, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+            .background {
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .fill(isActive ? Color.antesGreen : Color.antesBlue)
+                    .overlay(alignment: .top) {
+                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                            .fill(.white.opacity(0.18))
+                            .frame(height: 24)
+                            .blur(radius: 12)
+                    }
+            }
+            .overlay {
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .stroke(.white.opacity(0.32), lineWidth: 1)
+            }
+            .shadow(color: (isActive ? Color.antesGreen : Color.antesBlue).opacity(0.24), radius: 20, y: 12)
         }
         .buttonStyle(.plain)
         .accessibilityLabel(isActive ? "Ritual ativo" : "Ativar ritual e bloquear apps")

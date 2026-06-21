@@ -472,16 +472,26 @@ h2 {
   margin-top: 28px;
   border: 0;
   border-radius: 10px;
-  background: var(--blue);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0) 42%),
+    var(--blue);
   color: white;
   font-size: 17px;
   font-weight: 800;
-  box-shadow: 0 12px 24px rgba(0, 91, 255, 0.2);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.32) inset,
+    0 0 34px rgba(0, 118, 255, 0.24),
+    0 18px 32px rgba(0, 91, 255, 0.23);
 }
 
 .primary.active {
-  background: var(--green);
-  box-shadow: 0 12px 24px rgba(18, 175, 86, 0.18);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0) 42%),
+    var(--green);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.32) inset,
+    0 0 34px rgba(18, 175, 86, 0.2),
+    0 18px 32px rgba(18, 175, 86, 0.2);
 }
 
 .schedule {
