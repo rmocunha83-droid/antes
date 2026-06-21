@@ -279,8 +279,19 @@ h2 {
   padding-bottom: 2px;
 }
 
-.suggestions span,
 .suggestions button {
+  flex: 0 0 auto;
+  height: 38px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 14px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.suggestions > span {
   flex: 0 0 auto;
   height: 38px;
   border-radius: 999px;
@@ -289,9 +300,6 @@ h2 {
   padding: 0 14px;
   font-size: 13px;
   font-weight: 700;
-}
-
-.suggestions span {
   background: #eef0f4;
   color: #8a8e99;
 }
@@ -300,6 +308,32 @@ h2 {
   border: 1px solid var(--line);
   background: white;
   color: #464a57;
+}
+
+.suggestion-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.suggestion-icon.scripture {
+  background: #eef4ff;
+}
+
+.suggestion-icon.gratitude {
+  background: #fff0f3;
+}
+
+.suggestion-icon.water {
+  background: #eaf8ff;
+}
+
+.suggestion-icon.quiz {
+  background: #fff7df;
 }
 
 .preview {
