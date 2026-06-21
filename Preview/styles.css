@@ -192,7 +192,8 @@ h2 {
   place-items: center;
   background: white;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 1;
   box-shadow: 0 4px 14px rgba(16, 24, 40, 0.16);
 }
 

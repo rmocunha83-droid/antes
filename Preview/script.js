@@ -78,7 +78,7 @@ function renderApps() {
     button.innerHTML = `
       <span class="app-icon-wrap">
         <span class="app-icon ${app.className}">${app.icon}</span>
-        ${app.locked ? '<span class="lock-dot">▣</span>' : ""}
+        ${app.locked ? '<span class="lock-dot" aria-hidden="true">🔒</span>' : ""}
       </span>
       <strong>${app.name}</strong>
       <small>${app.locked ? "Bloqueado" : "Livre"}</small>
