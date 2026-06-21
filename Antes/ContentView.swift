@@ -115,12 +115,12 @@ private struct HeaderView: View {
 
             Spacer()
 
-            HStack(spacing: 18) {
+            HStack(spacing: 12) {
                 HStack(spacing: 5) {
-                    Image(systemName: "flame.fill")
-                        .font(.system(size: 19, weight: .bold))
-                    Text("7")
-                        .font(.system(size: 20, weight: .bold, design: .rounded))
+                    Text("🔥")
+                        .font(.system(size: 17))
+                    Text("7 dias")
+                        .font(.system(size: 17, weight: .bold, design: .rounded))
                 }
                 .foregroundStyle(Color.antesGreen)
                 .accessibilityLabel("Sequência de 7 dias")
