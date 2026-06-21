@@ -513,9 +513,8 @@ private struct StepRow: View {
 private struct UnlockRuleSection: View {
     var body: some View {
         HStack(spacing: 12) {
-            Image(systemName: "shield.checkered")
-                .font(.system(size: 24, weight: .semibold))
-                .foregroundStyle(Color.antesBlue)
+            Text("🙌")
+                .font(.system(size: 24))
 
             Text("Ao concluir, o TikTok será desbloqueado por 15 minutos.")
                 .font(.system(size: 15, weight: .medium))
